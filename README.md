@@ -47,20 +47,50 @@ Claude runs with a deliberately short leash: web search and fetch, files in the 
 - Every article ends with its full link in the footer. No QR codes.
 - The cartoon is original, unrelated to the news, and never uses known characters or logos.
 
-## Install
+## Run your own
+
+This is a working system, not a demo: clone it, fill in one config file, and you have your own
+paper. Nothing about the content is hardcoded - the owner, the organisation and the newsroom
+panel's repositories all come from `paper.conf`.
+
+**You need** a Mac, Claude Code installed and signed in, python3, and a printer. Roughly ten
+minutes, most of it waiting for the installer.
 
 ```sh
 git clone https://github.com/braghettos/thedailyreconcile.git
 cd thedailyreconcile
-cp paper.conf.example paper.conf   # then edit it
+cp paper.conf.example paper.conf
+$EDITOR paper.conf                 # owner, organisation, newsroom repos, email
 bash install.sh
 ```
 
-You need Claude Code (signed in) and python3. The installer creates `~/DailyReconcile`,
-installs the Python libraries in a private venv, test-renders an issue, checks that Claude Code
-answers without a terminal, finds the Gmail connector and loads the launchd agents.
+The installer creates `~/DailyReconcile`, installs the Python libraries into a private venv,
+copies in your `paper.conf`, test-renders an issue, checks that Claude Code answers without a
+terminal, finds the Gmail connector, clones your site repository and loads the two launchd
+agents. It stops if `paper.conf` still holds the example values, rather than printing a paper
+addressed to "Your Name".
 
-`paper.conf` is the only file with personal data, and it is git-ignored.
+Two things it cannot work out for you:
+
+```sh
+lpstat -p                          # find your printer's name
+$EDITOR ~/DailyReconcile/printer.conf    # set LP_PRINTER (or MODE=email for HP ePrint)
+```
+
+and, if you want the published edition page, enable GitHub Pages on your fork:
+**Settings → Pages → Deploy from a branch → `main` / `docs`**, then set `SITE_REPO="you/yourfork"`
+in `paper.conf`. Leave `SITE_REPO` empty and the paper simply prints without publishing.
+
+Then test the whole thing end to end, which takes five to ten minutes:
+
+```sh
+~/DailyReconcile/bin/morning-run.sh --force
+tail -f ~/DailyReconcile/morning.log
+```
+
+It ends with `PRINT PRINTED` and a notification. From then on it runs itself at 06:50.
+
+`paper.conf` is the only file holding anything personal, and it is git-ignored.
 
 Full notes: **[SETUP.md](SETUP.md)**. Layout and editorial reference: **[engine/README.md](engine/README.md)**.
 Why it is built this way: **[DESIGN.md](DESIGN.md)**.

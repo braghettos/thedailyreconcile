@@ -46,9 +46,21 @@ mkdir -p "$BASE/engine/fonts" "$BASE/archive" "$BASE/linkedin" "$BASE/bin"
 cp "$HERE/engine/build_pdf.py" "$HERE/engine/history.py" "$HERE/engine/brand.py" \
    "$HERE/engine/PROMPT.template.md" "$HERE/engine/README.md" "$BASE/engine/"
 cp "$HERE/paper.conf.example" "$BASE/paper.conf.example"
-if [ ! -f "$BASE/paper.conf" ]; then
+if [ -f "$HERE/paper.conf" ]; then
+  cp "$HERE/paper.conf" "$BASE/paper.conf"          # the one you edited in the clone wins
+  chmod 600 "$BASE/paper.conf"
+  say "Using the paper.conf from $HERE"
+elif [ ! -f "$BASE/paper.conf" ]; then
   cp "$HERE/paper.conf.example" "$BASE/paper.conf"
+  chmod 600 "$BASE/paper.conf"
   say "Edit $BASE/paper.conf (owner, organisation, newsroom, email) before the first run"
+fi
+# Refuse to run with the example values still in place: they would silently produce a paper
+# addressed to "Your Name" and a newsroom pointed at a repository that does not exist.
+if grep -q '^OWNER="Your Name"' "$BASE/paper.conf" 2>/dev/null; then
+  say "paper.conf still holds the example values"
+  echo "    Edit $BASE/paper.conf, then run this installer again."
+  exit 1
 fi
 cp "$HERE/engine/fonts/"*.ttf "$BASE/engine/fonts/"
 cp "$HERE/HANDOFF.md" "$HERE/SETUP.md" "$BASE/"
@@ -110,6 +122,20 @@ else
   else
     echo "    The test email was not sent: $(echo "$send_out" | tail -n 3)"
     echo "    The paper will still print. Fix the connector and run the installer again."
+  fi
+fi
+
+# 6c. The clone the morning run publishes the edition from. Kept separate from your working
+# copy so an automated commit can never land on top of whatever you have checked out.
+SITE_REPO="$(. "$BASE/paper.conf"; echo "${SITE_REPO:-}")"
+if [ -n "$SITE_REPO" ] && [ ! -d "$BASE/repo/.git" ]; then
+  say "Cloning $SITE_REPO for publishing the edition page"
+  if git clone -q "https://github.com/$SITE_REPO.git" "$BASE/repo" 2>/dev/null; then
+    echo "    $BASE/repo"
+    echo "    Enable GitHub Pages for it: Settings > Pages > Deploy from a branch > main / docs"
+  else
+    echo "    Could not clone it. The paper still prints; the edition page will be skipped."
+    echo "    Fix it with:  git clone https://github.com/$SITE_REPO.git $BASE/repo"
   fi
 fi
 

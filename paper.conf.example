@@ -23,6 +23,10 @@ SITE_REPO=""                   # e.g. you/thedailyreconcile ; empty = do not pub
 SITE_BRANCH="main"
 SITE_DIR="docs"           # GitHub Pages serves / or /docs only
 
-# LinkedIn: see tools/linkedin_post.py. Both must be set, or posting is skipped.
+# LinkedIn: OFF by default, and most setups should leave it that way. Posting to a Page needs
+# the Community Management API, which LinkedIn grants only after reviewing an application, plus
+# a token that expires every 60 days. Left empty, the morning run still writes the post, archives
+# it and emails it to you - you publish it yourself, which also keeps a human eye on the paper
+# before it goes out under your name. Fill both in only if you have been granted API access.
 LINKEDIN_PAGE_URN=""           # e.g. urn:li:organization:12345678
 LINKEDIN_TOKEN_FILE=""         # file holding an access token with w_organization_social

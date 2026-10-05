@@ -20,7 +20,7 @@ No cloud service runs this. It is a prompt, a layout engine and two shell script
 | **Page 1** | Nameplate with ears (motto, countdown to the next CFP), an "Inside today" strip, a lead story with drop cap and a by-the-numbers factbox, three more stories, a pull quote and a stat box |
 | **Page 2** | The newsroom press-release panel, news in brief across four columns, small fillers (number of the day, a verified kubectl tip), an original cartoon and a word search with the solution printed upside down |
 | **Public edition** | The same issue with the personal label and any private links removed, for sharing |
-| **LinkedIn post** | Plain text, at most 1,300 characters, written from the issue |
+| **LinkedIn post** | Plain text, at most 1,300 characters, written from the issue, emailed to you each morning to publish by hand |
 
 ## How it works
 
@@ -30,7 +30,7 @@ launchd 06:50  ->  morning-run.sh  ->  claude -p "$(PROMPT.md)"  ->  content.jso
                                                                  -> public PDF + LinkedIn text
                    morning-run.sh  ->  history.py add        (so nothing repeats)
                                    ->  publish_site.py       (the GitHub Pages edition page, docs/)
-                                   ->  linkedin_post.py      (if credentials are configured)
+                                   ->  linkedin_post.py      (opt-in; off unless a token is set)
                                    ->  inbox/ -> print watcher -> printer
 ```
 

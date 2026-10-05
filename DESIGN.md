@@ -54,6 +54,9 @@ sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00
 
 - **The dedicated page comes first.** `tools/publish_site.py` adds the edition to `docs/` (GitHub Pages serves `/` or `/docs` only) and the
   commit is pushed to GitHub Pages, so the LinkedIn post has something to point at.
-- **LinkedIn needs approval.** Posting to a Page requires the Community Management API approved
-  for a verified app, plus a 60-day member token. `tools/linkedin_post.py` skips cleanly when the
-  token is missing, so the rest of the morning never fails because of it.
+- **LinkedIn is published by hand, on purpose.** Posting to a Page requires the Community
+  Management API, which LinkedIn grants only after reviewing an application, plus a member token
+  that expires every 60 days. That was judged not worth it: the morning email already delivers the
+  post text, and publishing it yourself keeps a person between an unattended research run and your
+  own name. `tools/linkedin_post.py` remains, and works, for anyone who does hold API access; it
+  stays dormant unless `LINKEDIN_TOKEN_FILE` is set, so it costs nothing to leave in place.

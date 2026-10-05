@@ -103,7 +103,10 @@ if [ -f "$PUB" ] && [ -n "$SITE_REPO" ] && [ -d "$BASE/repo/.git" ]; then
 elif [ -n "$SITE_REPO" ]; then
   log "SITE SKIPPED (no public PDF, or $BASE/repo is not a git clone)"
 fi
-if [ -f "$PUB" ] && [ -f "$POST" ] && [ -d "$BASE/repo" ]; then
+# LinkedIn posting is opt-in and off by default: it needs API access LinkedIn only grants on
+# review. Without a token file the post is simply prepared, archived and emailed, and published
+# by hand. Nothing is logged here when it is not configured.
+if [ -n "${LINKEDIN_TOKEN_FILE:-}" ] && [ -f "$PUB" ] && [ -f "$POST" ] && [ -d "$BASE/repo" ]; then
   log "$(cd "$BASE/repo" && python3 tools/linkedin_post.py "$ENG/$POST" "$ENG/$PUB" 2>&1 | tail -n 1)"
 fi
 

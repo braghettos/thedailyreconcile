@@ -73,8 +73,14 @@ after: desired state and actual state, converging. The same code draws the print
 the page avatar and the social preview, so they cannot drift apart.
 
 ```sh
-python3 brand/make_brand_assets.py brand    # regenerates everything in brand/
+python3 brand/make_brand_assets.py brand            # mark, avatars, social preview
+python3 brand/make_banner.py <issue.pdf>            # LinkedIn cover, from a real issue
 ```
+
+The cover is not a blind crop of the front page: a 1128x191 banner is 5.9:1, and every
+horizontal cut at that ratio runs through a line of type, so `make_banner.py` lifts the
+masthead block whole - ears, nameplate, folio rule and the "Inside today" strip - and centres
+it instead.
 
 ## Licence
 

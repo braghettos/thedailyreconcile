@@ -49,4 +49,4 @@ python3 build_pdf.py content.json daily-reconcile.pdf
 - **Print watcher:** a launchd agent (`com.dailyreconcile.printwatcher`, installed by `install-print-watcher.sh`) sends each new PDF to the printer with `lp -o media=A4 -o Duplex=DuplexNoTumble` on the printer named in `printer.conf`: one sheet, printed on both sides. Each paper is then moved to `printed/` or `failed/`, and one line is written to `print.log`.
 - **Fallback:** `MODE=email` in `printer.conf` emails the PDF from Mail.app to HP ePrint (`your-eprint-address@hpeprint.com`), which prints single-sided.
 - **LinkedIn:** the public PDF and the post text go to `~/DailyReconcile/linkedin/`. They are never posted automatically.
-- **Requirements:** the task must be linked to the Mac ("Require this computer"), with the `DailyReconcile` folder connected. The Mac must be awake (`sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00`) with the Claude desktop app running.
+- **Requirements:** the Mac logged in, with Claude Code installed and signed in. If it is asleep at 06:50 the run happens when it next wakes.

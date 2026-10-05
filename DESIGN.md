@@ -44,7 +44,12 @@ the code, so the next change does not undo a deliberate choice.
 The paper first ran as a cloud scheduled task that printed through a linked Mac. Linking the
 task to the machine never worked - it failed to confirm the computer's identity, and clearing
 the Keychain items did not help. Running Claude Code locally from launchd replaced it entirely
-and removed the whole class of problem: the Mac just has to be awake.
+and removed the whole class of problem: the Mac just has to be logged in.
+
+Sleep is not fatal. launchd runs a missed `StartCalendarInterval` job when the machine next wakes,
+and `morning-run.sh` exits immediately if today's issue already exists, so a sleeping Mac delays
+the paper rather than losing it. Scheduling a wake-up is therefore optional, and only worth it if
+you want the paper waiting for you at breakfast rather than whenever the lid opens:
 
 ```sh
 sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00

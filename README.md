@@ -29,7 +29,7 @@ launchd 06:50  ->  morning-run.sh  ->  claude -p "$(PROMPT.md)"  ->  content.jso
                                                                  -> build_pdf.py -> PDF (2 pages)
                                                                  -> public PDF + LinkedIn text
                    morning-run.sh  ->  history.py add        (so nothing repeats)
-                                   ->  publish_site.py       (the GitHub Pages edition page)
+                                   ->  publish_site.py       (the GitHub Pages edition page, docs/)
                                    ->  linkedin_post.py      (if credentials are configured)
                                    ->  inbox/ -> print watcher -> printer
 ```

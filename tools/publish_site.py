@@ -2,14 +2,14 @@
 
     python3 tools/publish_site.py <public-pdf> <YYYY-MM-DD> [content.json]
 
-Copies the public PDF into site/editions/<date>/, renders a page-1 thumbnail, records the
-edition in site/editions.json and regenerates site/index.html. Committing and pushing is left
+Copies the public PDF into docs/editions/<date>/, renders a page-1 thumbnail, records the
+edition in docs/editions.json and regenerates docs/index.html. Committing and pushing is left
 to the caller (morning-run.sh), so a failed render never pushes a half-built site.
 """
 import datetime, html, json, os, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "site")
+SITE = os.path.join(ROOT, "docs")   # GitHub Pages serves / or /docs only
 MONTHS = ["January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
 

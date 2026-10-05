@@ -21,7 +21,7 @@ NEWSROOM_PRIVATE_ORG="example-org-private"
 # GitHub Pages: the repo that serves the site (usually this one).
 SITE_REPO=""                   # e.g. you/thedailyreconcile ; empty = do not publish
 SITE_BRANCH="main"
-SITE_DIR="site"
+SITE_DIR="docs"           # GitHub Pages serves / or /docs only
 
 # LinkedIn: see tools/linkedin_post.py. Both must be set, or posting is skipped.
 LINKEDIN_PAGE_URN=""           # e.g. urn:li:organization:12345678

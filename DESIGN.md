@@ -52,7 +52,7 @@ sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00
 
 ## Publishing
 
-- **The dedicated page comes first.** `tools/publish_site.py` adds the edition to `site/` and the
+- **The dedicated page comes first.** `tools/publish_site.py` adds the edition to `docs/` (GitHub Pages serves `/` or `/docs` only) and the
   commit is pushed to GitHub Pages, so the LinkedIn post has something to point at.
 - **LinkedIn needs approval.** Posting to a Page requires the Community Management API approved
   for a verified app, plus a 60-day member token. `tools/linkedin_post.py` skips cleanly when the

@@ -86,7 +86,7 @@ python3 history.py add content.json >> "$LOG" 2>&1
 # Publish: the dedicated page first (it is the link the LinkedIn post points at), then LinkedIn.
 PUB="daily-reconcile-public-$TODAY.pdf"
 POST="linkedin-post-$TODAY.txt"
-SITE_REPO=""; SITE_BRANCH="main"; SITE_DIR="site"
+SITE_REPO=""; SITE_BRANCH="main"; SITE_DIR="docs"
 [ -f "$BASE/paper.conf" ] && . "$BASE/paper.conf"
 if [ -f "$PUB" ] && [ -n "$SITE_REPO" ] && [ -d "$BASE/repo/.git" ]; then
   if out="$(cd "$BASE/repo" && python3 tools/publish_site.py "$ENG/$PUB" "$TODAY" "$ENG/content.json" 2>&1)"; then

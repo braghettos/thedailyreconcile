@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-05",
+  "pdf": "editions/2026-10-05/daily-reconcile-2026-10-05.pdf",
+  "thumb": "editions/2026-10-05/page-1.png",
+  "pages": 2,
+  "headline": "Cloudflare Containers handed each new tenant 60 KiB of the last one's disk",
+  "deck": "The hole was not in the Firecracker boundary but one layer down, in Linux device mapper thin provisioning. Anyone running dm-thin pools under containers should check the same setting.",
+  "inside": [
+   "Uber splits scaling intent from execution across 100 clusters and 3 million cores",
+   "CVSS 10.0 path traversal in self-managed GitLab is being probed in the wild",
+   "Aleph Alpha opens Kolibri-1: 78B weights, 3.5B active, 1M context, Apache 2.0",
+   "Kueue 0.20.0 stops serving v1beta1: rewrite your objects before upgrading"
+  ]
+ },
+ {
   "date": "2026-10-02",
   "pdf": "editions/2026-10-02/daily-reconcile-2026-10-02.pdf",
   "thumb": "editions/2026-10-02/page-1.png",

@@ -7,14 +7,16 @@ printer.conf
 # generated from PROMPT.template.md at run time
 engine/PROMPT.md
 
-# build output
+# build output. These live in the engine working folder; the published copies under
+# docs/editions/ are the point of the site, so the patterns are anchored to engine/.
 *.pyc
 __pycache__/
 venv/
-daily-reconcile-*.pdf
-linkedin-post-*.txt
-page-*.png
-content.prev.json
+engine/daily-reconcile-*.pdf
+engine/linkedin-post-*.txt
+engine/page-*.png
+engine/content.prev.json
+engine/test-render.pdf
 history.json
 archive/
 inbox/

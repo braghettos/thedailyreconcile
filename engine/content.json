@@ -1,0 +1,342 @@
+{
+ "date": "2026-10-02",
+ "title": "The Daily Reconcile",
+ "tagline": "Kubernetes · Platform Engineering · Cloud Native",
+ "lead": {
+  "kicker": "Kubernetes",
+  "headline": "Kubernetes 1.37 lands 67 enhancements, from HPA scale-to-zero to stable KYAML",
+  "deck": "Sixteen features go stable, 23 move to beta and 27 debut in alpha. These are the ones that change day-to-day work for cluster and platform operators.",
+  "text": [
+   "The release ships 67 enhancements: 16 stable, 23 beta, 27 alpha and one deprecation. The headline stable feature is KYAML, a YAML dialect designed for manifests that removes two long-standing traps: whitespace sensitivity and implicit typing of values.",
+   "HorizontalPodAutoscaler scale-to-zero reaches beta and is on by default for workloads scaled on object or external metrics, so idle pods can drop to zero. Manifest-based admission control also moves to beta, Pod-level checkpoint and restore debuts in alpha, and resilient watch cache initialisation is complete, to prevent control-plane outages in large clusters.",
+   "On nodes, Memory QoS graduates to beta and needs cgroup v2. Pod-level resource managers reach beta but stay off by default: they read the Pod's .spec.resources, so lightweight sidecars no longer need exclusive cores to get NUMA alignment. Tracking when a PVC was last used goes beta, which helps find forgotten volumes, and new options harden emptyDir permissions and bind mounts."
+  ],
+  "source": "kubernetes.io, The New Stack",
+  "urls": [
+   "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+   "https://kubernetes.io/blog/"
+  ],
+  "jump_head": "Kubernetes 1.37"
+ },
+ "stories": [
+  {
+   "kicker": "AI on Kubernetes",
+   "headline": "One control plane for 10,000 accelerators: how China Merchants Bank runs AI on Kubernetes",
+   "deck": "Training, fine-tuning and inference now share the same hardware, and inference costs fell by more than 60%.",
+   "text": [
+    "The winner of CNCF's end-user case study contest pools nearly 10,000 heterogeneous accelerator cards, 99% of the bank's accelerator resources, under one cloud native framework. Training, fine-tuning and online inference keep separate runtimes but share the hardware.",
+    "Each project has one job. Kueue handles admission, queues and quotas, so training jobs cannot reserve capacity before they run. KEDA scales inference on live demand. HAMi splits accelerators into fine-grained units for both paths, Fluid speeds up access to datasets and model weights, and Prometheus covers observability.",
+    "Average accelerator utilisation rose from 35% to over 60%, and inference cost per million tokens fell by more than 60%. The bank's Twinkle framework lets five LoRA tenants share one base model, cutting accelerator use by 80% and raising training density fivefold."
+   ],
+   "source": "CNCF",
+   "url": "https://www.cncf.io/announcements/2026/09/07/china-merchants-bank-wins-cncf-end-user-case-study-contest-for-unifying-ai-training-and-inference-on-kubernetes/",
+   "jump_head": "China Merchants Bank"
+  },
+  {
+   "kicker": "Platform engineering",
+   "headline": "Yassir runs access to 15 tools with Crossplane and Backstage",
+   "deck": "From Terraform files to a platform that reconciles itself.",
+   "text": [
+    "Under Terraform, reviews never checked whether a change made organisational sense, and a single state file queued even unrelated changes. Now there are two CRDs, Member and Team, plus one Crossplane composition per tool: native providers for GCP, GitHub, PagerDuty and Atlas, the HTTP provider for Slack, Jira and Sentry.",
+    "Continuous reconciliation strips any access granted by hand. CODEOWNERS is generated from team files, privileged grants are blocked in CI, and Backstage forms open the same pull requests an engineer would. Compositions are tested with crossplane render in CI. The authors' lesson: getting the right approvers mattered more than the tool."
+   ],
+   "source": "Medium · Ayoub Reda",
+   "url": "https://medium.com/p/0c744f10b671",
+   "jump_head": "Yassir and Crossplane"
+  },
+  {
+   "kicker": "OpenStack",
+   "headline": "OpenStack 2026.2 “Hibiscus” ships with 28% more changes",
+   "deck": "The 34th release, out on September 30, is built around AI-era infrastructure.",
+   "text": [
+    "About 600 contributors landed some 11,500 changes, up 21% and 28% on the Gazpacho cycle. Neutron cut the memory footprint of HA router monitoring by more than fifteen times. The cycle's themes are GPU and accelerator support and confidential computing, and the Vulnerability Management Team coordinated dozens of embargoed advisories.",
+    "Hibiscus is not a SLURP release. The next one, Indri, is, so operators on Gazpacho (2026.1) can skip Hibiscus and upgrade straight to Indri."
+   ],
+   "source": "OpenStack blog",
+   "url": "https://legacy.openstack.org/blog/openstack-hibiscus-what-it-takes-to-build-a-release-together/",
+   "jump_head": "OpenStack Hibiscus"
+  },
+  {
+   "kicker": "New models",
+   "headline": "GPT-6.1 Sol, Claude Sonnet 5.5 and open-weight MiMo-V2.6 land in one week",
+   "deck": "Frontier performance keeps getting cheaper.",
+   "text": [
+    "OpenAI's GPT-6.1 Sol (September 29) costs $2 per million input tokens and $10 per million output, a fifth of GPT-6 Astra, and OpenAI says it nearly matches Astra on agentic coding and computer use. It is in the API and ChatGPT's paid tiers.",
+    "Anthropic's Claude Sonnet 5.5 (September 28) keeps Sonnet 5 pricing at $2 and $10. Anthropic says it is over 30% faster and up to 30% cheaper per task, with adaptive thinking on by default; it runs on AWS, Google Cloud and Azure.",
+    "Xiaomi's MiMo-V2.6 (September 21) is the open option: MIT-licensed weights on Hugging Face, a one-million-token context, a Pro model with 1.02 trillion parameters (42 billion active) and a 309-billion-parameter Flash. Xiaomi gives no hardware guidance for self-hosting."
+   ],
+   "source": "The New Stack, Unite.AI, DataNorth",
+   "urls": [
+    "https://thenewstack.io/openai-gpt-6-1-sol/",
+    "https://www.unite.ai/anthropic-releases-claude-sonnet-5-5-at-unchanged-sonnet-5-pricing/",
+    "https://datanorth.ai/news/xiaomi-releases-mimo-v2-6-pro-and-flash"
+   ],
+   "jump_head": "New models"
+  }
+ ],
+ "briefs": [
+  {
+   "kicker": "Security",
+   "headline": "Three Kubernetes CVEs in a week, one hits multi-tenancy",
+   "text": "September 23: CVE-2026-2270, write access to StatefulSets and ControllerRevisions allows creating pods in other namespaces; CVE-2026-76654, subPath symlinks on Windows nodes allow NTLM coercion. September 28: CVE-2026-19444, path traversal in kubectl cp on Windows enables arbitrary file writes. Check the advisories for severity and fixed versions.",
+   "source": "kubernetes-security-announce",
+   "url": "https://groups.google.com/g/kubernetes-security-announce"
+  },
+  {
+   "kicker": "HPC",
+   "headline": "Azimuth adds Kubernetes 1.36 and AMD GPUs, drops Ingress NGINX",
+   "text": "StackHPC's Q3 report (September 7): Azimuth 2026.7 brings Kubernetes 1.36 and AMD GPU support; 2026.6 replaced the archived Ingress NGINX with Traefik, with some downtime; 2026.8 moves to Ubuntu 24.04, adds single-node control planes and swaps the deprecated Kubernetes dashboard for Headlamp. Five StackHPC customer systems are on the TOP500, including Sunrise (#67) and Dawn (#111).",
+   "source": "StackHPC",
+   "url": "https://www.stackhpc.com/navigating-upstream-2026-Q3.html"
+  },
+  {
+   "kicker": "Multi-cluster",
+   "headline": "Karmada graduates from the CNCF",
+   "text": "Karmada extends the Kubernetes API with PropagationPolicy (where workloads run, with rebalancing across regions, zones and clouds) and OverridePolicy (per-cluster configuration). It schedules multi-component AI training jobs; priority scheduling is now beta and on by default. 1,214 contributors from 292 organisations; users include Bloomberg and Alibaba Cloud.",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/09/karmada-kubernetes-cncf/"
+  },
+  {
+   "kicker": "Kubernetes",
+   "headline": "Kubernetes 1.34 reaches end of life on October 27",
+   "text": "Supported branches are 1.37 (1.37.1), 1.36 (1.36.5), 1.35 (1.35.9) and 1.34 (1.34.12). The next patch release is due October 13, with cherry-picks closing on the 9th. End of life: 1.35 on February 28, 2027, 1.36 on June 28, 2027, 1.37 on October 28, 2027.",
+   "source": "kubernetes.io",
+   "url": "https://kubernetes.io/releases/patch-releases/"
+  },
+  {
+   "kicker": "Security",
+   "headline": "Dell CSM: unauthenticated root on Kubernetes nodes",
+   "text": "Container Storage Modules before 1.18.0 let an unauthenticated attacker steal storage admin credentials, gain root on nodes and read Secrets cluster-wide. Upgrade to 1.18.0, restrict network access to the Authorization service with NetworkPolicies, and rotate credentials and Secrets. Six CVEs, from 2026-63688 to 2026-67273.",
+   "source": "Shield53",
+   "url": "https://news.shield53.com/dell-csm-authorization-flaws-expose-kubernetes-storage-infrastructure-to-total-compromise/"
+  },
+  {
+   "kicker": "Crossplane",
+   "headline": "Crossplane 2.4.2: security bumps and a ServiceAccount fix",
+   "text": "The September 22 patch fixes ServiceAccount ownership being wrongly transferred to new package revisions, bumps the OpenTelemetry OTLP exporter to 1.45.0 for security, and makes a claim fail closed when it cannot list its XRD. Since 2.4, composition functions can watch required resources they do not compose, and safe-start providers scale to zero. Note: the CLI is only distributed from cli.crossplane.io.",
+   "source": "GitHub · crossplane",
+   "url": "https://github.com/crossplane/crossplane/releases/tag/v2.4.2"
+  },
+  {
+   "kicker": "Argo CD",
+   "headline": "Argo CD 3.5.2: sync fixes and a Dex update",
+   "text": "Restores ignoreApplicationDifferences after normalisation and stops auto-sync from being skipped when newer commits arrive mid-sync. Bumps Dex to 2.45.1 and DOMPurify for CVE-2026-49978. No breaking changes documented. Released August 27 alongside 3.4.8.",
+   "source": "GitHub · argo-cd",
+   "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.2"
+  },
+  {
+   "kicker": "GitOps",
+   "headline": "“My config repo is not a database”",
+   "text": "Alexis Richardson, who coined the term GitOps, lists seven failure modes of using Git as a database: file names as keys, approving templates but deploying rendered output, no transactions for promotions, invisible blast radius, freezes standing in for safety. He suggests versioning rendered output, as Argo CD's Source Hydrator does, and a configuration database alongside Git; his company sells into that category.",
+   "source": "Medium · Alexis Richardson",
+   "url": "https://medium.com/p/9df165182b25"
+  },
+  {
+   "kicker": "Observability",
+   "headline": "OpenTelemetry and Prometheus are finally getting along",
+   "text": "In the 2026 survey, ease of use rose from 3.1 to 3.6 and the share finding the combination hard fell from 29% to 10%. Nearly 50% mix both for infrastructure metrics. Open gaps: data model, resource attributes and naming. Atlassian moved 100,000 hosts to OpenTelemetry and cut aggregation CPU by about 50% and sidecar cost by 30%.",
+   "source": "The New Stack",
+   "url": "https://thenewstack.io/opentelemetry-prometheus-observability-interoperability/"
+  },
+  {
+   "kicker": "CNCF",
+   "headline": "Kubeflow and Buildpacks graduate, k8gb incubates",
+   "text": "Kubeflow graduated on August 17 and Cloud Native Buildpacks on August 11; k8gb, the Kubernetes global load balancer, became incubating on August 5. The KubeCon NA 2026 schedule adds an AI Inference and Agentic track.",
+   "source": "CNCF",
+   "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-08",
+   "when": "Oct 8",
+   "tag": "online",
+   "what": "Dapr Day Virtual"
+  },
+  {
+   "date": "2026-10-11",
+   "when": "Oct 11",
+   "tag": "CFP",
+   "short": "KubeCon EU 2027 CFP",
+   "what": "KubeCon + CloudNativeCon Europe 2027 (Barcelona, Mar 15–18): talks due 23:59 CEST"
+  },
+  {
+   "date": "2026-10-15",
+   "when": "Oct 15",
+   "tag": "online",
+   "what": "KubeVirt Summit Virtual"
+  },
+  {
+   "date": "2026-10-18",
+   "when": "Oct 18",
+   "tag": "CFP",
+   "short": "KubeCon EU co-located CFP",
+   "what": "KubeCon EU co-located days: Platform Engineering Day, ArgoCon, BackstageCon"
+  },
+  {
+   "date": "2026-10-29",
+   "when": "Oct 29–30",
+   "tag": "event",
+   "what": "Dutch Cloud Native Day, Utrecht"
+  },
+  {
+   "date": "2026-11-09",
+   "when": "Nov 9–12",
+   "tag": "event",
+   "what": "KubeCon NA, Salt Lake City; Platform Engineering Day, ArgoCon and BackstageCon on Nov 9"
+  },
+  {
+   "date": "2026-11-15",
+   "when": "Nov 15–20",
+   "tag": "event",
+   "what": "SC26, the HPC conference, Chicago"
+  },
+  {
+   "date": "2026-11-19",
+   "when": "Nov 19–20",
+   "tag": "event",
+   "what": "Cloud Native Denmark, Copenhagen"
+  }
+ ],
+ "cartoon": {
+  "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='300' height='216' viewBox='0 0 300 216'>\n<rect width='300' height='216' fill='#ffffff'/>\n<circle cx='262' cy='34' r='15' fill='#ffffff' stroke='#000' stroke-width='2.5'/>\n<g stroke='#000' stroke-width='2' stroke-linecap='round'>\n<line x1='262' y1='10' x2='262' y2='4'/><line x1='262' y1='58' x2='262' y2='64'/>\n<line x1='238' y1='34' x2='232' y2='34'/><line x1='286' y1='34' x2='292' y2='34'/>\n<line x1='245' y1='17' x2='241' y2='13'/><line x1='279' y1='51' x2='283' y2='55'/>\n<line x1='279' y1='17' x2='283' y2='13'/><line x1='245' y1='51' x2='241' y2='55'/>\n</g>\n<path d='M0 176 Q50 160 105 174 T215 170 T300 166 L300 216 L0 216 Z' fill='#ffffff' stroke='#000' stroke-width='2.5'/>\n<g fill='#000'><circle cx='40' cy='196' r='1.2'/><circle cx='120' cy='200' r='1.2'/><circle cx='180' cy='192' r='1.2'/><circle cx='250' cy='202' r='1.2'/><circle cx='80' cy='206' r='1.2'/><circle cx='210' cy='206' r='1.2'/></g>\n<path d='M228 170 Q222 128 236 92' fill='none' stroke='#000' stroke-width='5' stroke-linecap='round'/>\n<g fill='none' stroke='#000' stroke-width='3' stroke-linecap='round'>\n<path d='M236 92 Q214 78 196 92'/><path d='M236 92 Q224 68 204 66'/><path d='M236 92 Q246 66 266 70'/><path d='M236 92 Q258 82 274 98'/><path d='M236 92 Q238 74 236 60'/>\n</g>\n<ellipse cx='246' cy='176' rx='30' ry='5' fill='#ffffff' stroke='#000' stroke-width='2'/>\n<line x1='150' y1='172' x2='150' y2='98' stroke='#000' stroke-width='3'/>\n<rect x='104' y='70' width='92' height='32' fill='#ffffff' stroke='#000' stroke-width='2.5'/>\n<text x='150' y='92' font-size='13' font-weight='bold' text-anchor='middle' font-family='sans-serif'>FREE WI-FI</text>\n<g fill='none' stroke='#000' stroke-width='2.4' stroke-linecap='round'>\n<path d='M140 56 Q150 49 160 56'/><path d='M134 50 Q150 38 166 50'/><path d='M128 44 Q150 27 172 44'/>\n</g>\n<circle cx='150' cy='61' r='2.6' fill='#000'/>\n<g fill='#000'><circle cx='6' cy='182' r='1.5'/><circle cx='14' cy='179' r='1.5'/><circle cx='22' cy='182' r='1.5'/><circle cx='30' cy='179' r='1.5'/></g>\n<g fill='none' stroke='#000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'>\n<line x1='54' y1='160' x2='92' y2='151'/>\n<line x1='54' y1='160' x2='26' y2='166'/><line x1='54' y1='160' x2='28' y2='157'/>\n<polyline points='88,152 108,132 116,121'/>\n<line x1='86' y1='153' x2='83' y2='167'/>\n</g>\n<g stroke='#000' stroke-width='1.8' stroke-linecap='round'>\n<line x1='116' y1='121' x2='114' y2='114'/><line x1='116' y1='121' x2='120' y2='115'/><line x1='116' y1='121' x2='123' y2='119'/>\n<line x1='126' y1='110' x2='131' y2='106'/><line x1='129' y1='118' x2='135' y2='117'/><line x1='120' y1='105' x2='121' y2='99'/>\n</g>\n<circle cx='104' cy='146' r='10' fill='#ffffff' stroke='#000' stroke-width='2.6'/>\n<circle cx='108' cy='143' r='1.5' fill='#000'/>\n<ellipse cx='109.5' cy='150' rx='2.2' ry='1.8' fill='#000'/>\n<path d='M90 134 q-3.5 6 0 8 q3.5 -2 0 -8' fill='#ffffff' stroke='#000' stroke-width='1.4'/>\n<path d='M95 126 q-3 5 0 7 q3 -2 0 -7' fill='#ffffff' stroke='#000' stroke-width='1.4'/>\n</svg>",
+  "caption": "Water can wait. First, the password.",
+  "explanation": "An exhausted traveller crosses the desert and finally reaches the oasis. He ignores the pond under the palm tree and crawls towards the free Wi-Fi sign instead. The joke is about how connectivity has become a “basic need”, almost ahead of water."
+ },
+ "game": {
+  "intro": "Find the words from your day job hidden in the grid.",
+  "words": [
+   "KUBERNETES",
+   "OPENSTACK",
+   "CROSSPLANE",
+   "KARMADA",
+   "SLURM",
+   "KUEUE",
+   "CLUSTER",
+   "GITOPS",
+   "HELM",
+   "POD"
+  ]
+ },
+ "sources_line": "kubernetes.io, CNCF, The New Stack, OpenStack, InfoQ, StackHPC, Linux Foundation Events, GitHub, Medium and others",
+ "factbox": {
+  "title": "1.37 by the numbers",
+  "items": [
+   {
+    "label": "Stable",
+    "value": 16
+   },
+   {
+    "label": "Beta",
+    "value": 23
+   },
+   {
+    "label": "Alpha",
+    "value": 27
+   },
+   {
+    "label": "Deprecated",
+    "value": 1
+   }
+  ],
+  "note": "67 enhancements in total. Source: The New Stack."
+ },
+ "pullquote": {
+  "text": "Built on a unified cloud-native foundation, our platform brings together heterogeneous compute pooling, training job scheduling, elastic inference scaling…",
+  "attribution": "PeiXiang Tan, China Merchants Bank"
+ },
+ "teasers": [
+  0,
+  1,
+  2
+ ],
+ "motto": "All the cloud native news that’s fit to reconcile",
+ "edition": "Personal edition",
+ "fill_wide": 1,
+ "statbox": {
+  "title": "The bank in numbers",
+  "items": [
+   {
+    "value": "~10k",
+    "label": "accelerator cards on one control plane"
+   },
+   {
+    "value": "60%+",
+    "label": "average utilisation, up from 35%"
+   },
+   {
+    "value": "-60%",
+    "label": "inference cost per million tokens"
+   }
+  ]
+ },
+ "krateo": {
+  "headline": "Blueprint rendering gets a new name and offline previews; Autopilot isolates sub-agent sessions",
+  "intro": "Two render-service releases on the public side; one merged change on the private side.",
+  "products": [
+   {
+    "name": "Example PlatformOps",
+    "subtitle": "GitHub releases, github.com/example-org",
+    "releases": [
+     {
+      "component": "helm-render-service",
+      "version": "0.5.0",
+      "date": "Sep 30",
+      "notes": [
+       "Chart renamed to blueprint-render-service, new OCI registry.",
+       "Endpoint secret default is now blueprint-render-endpoint: update values before upgrading."
+      ],
+      "url": "https://github.com/example-org/<repo>/releases"
+     },
+     {
+      "component": "helm-render-service",
+      "version": "0.4.0",
+      "date": "Sep 28",
+      "notes": [
+       "lookupStubs on /render: previews without a live cluster. Preflight checks in CI."
+      ],
+      "url": "https://github.com/example-org/<repo>/releases"
+     }
+    ],
+    "note": "Latest elsewhere: component-a 1.12.13 (Sep 24), component-b 0.4.0 (Sep 22)"
+   },
+   {
+    "name": "Example Private Suite",
+    "subtitle": "Merged pull requests, from GitHub notifications (repositories are private)",
+    "releases": [
+     {
+      "component": "autopilot",
+      "version": "PR #94",
+      "date": "merged Oct 2",
+      "notes": [
+       "Each sub-agent call gets its own session; isolateSessions is live on kagent 0.10.1."
+      ],
+      "url": "https://github.com/example-org-private/<repo>/pull/<N>"
+     }
+    ],
+    "note": "No other private pull requests were merged in the last seven days.",
+    "private": true,
+    "public_subtitle": "Merged into main this week"
+   }
+  ],
+  "source_label": "Press release · from GitHub releases and notifications",
+  "label": "Newsroom"
+ },
+ "fillers": [
+  {
+   "type": "number",
+   "title": "Number of the day",
+   "value": "1,214",
+   "label": "Karmada contributors, from 292 organisations",
+   "source": "InfoQ"
+  },
+  {
+   "type": "tip",
+   "title": "kubectl tip",
+   "code": "kubectl events -A --types=Warning",
+   "label": "Only Warning events, all namespaces",
+   "source": "kubernetes.io"
+  }
+ ],
+ "public_edition": "Daily edition · Kubernetes & platform engineering"
+}

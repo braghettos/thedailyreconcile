@@ -1,0 +1,16 @@
+[
+ {
+  "date": "2026-10-02",
+  "pdf": "editions/2026-10-02/daily-reconcile-2026-10-02.pdf",
+  "thumb": "editions/2026-10-02/page-1.png",
+  "pages": 2,
+  "headline": "Kubernetes 1.37 lands 67 enhancements, from HPA scale-to-zero to stable KYAML",
+  "deck": "Sixteen features go stable, 23 move to beta and 27 debut in alpha. These are the ones that change day-to-day work for cluster and platform operators.",
+  "inside": [
+   "One control plane for 10,000 accelerators: how China Merchants Bank runs AI on Kubernetes",
+   "Yassir runs access to 15 tools with Crossplane and Backstage",
+   "OpenStack 2026.2 “Hibiscus” ships with 28% more changes",
+   "GPT-6.1 Sol, Claude Sonnet 5.5 and open-weight MiMo-V2.6 land in one week"
+  ]
+ }
+]

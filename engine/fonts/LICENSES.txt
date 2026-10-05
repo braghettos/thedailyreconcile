@@ -1,0 +1,4 @@
+Lora (static instances of the Google Fonts variable font) - SIL Open Font License 1.1, The Lora Project Authors
+Carlito - SIL Open Font License 1.1, tyPoland Lukasz Dziedzic
+Liberation Serif - SIL Open Font License 1.1, Red Hat
+DejaVu Sans, DejaVu Sans Mono - Bitstream Vera / DejaVu free license

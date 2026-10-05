@@ -1,0 +1,28 @@
+# The Daily Reconcile: who the paper is for, and what its newsroom panel follows.
+# Copy to paper.conf and fill in. paper.conf is git-ignored: it holds the only personal data.
+
+OWNER="Your Name"
+OWNER_FIRSTNAME="yourname"     # lowercased; the public edition is rejected if it contains this
+ORG="Your Company"
+EMAIL_TO="you@example.com"     # where the morning email with the LinkedIn post is sent
+
+# --- newsroom panel on page 2 -------------------------------------------------
+# Public half: releases read straight from a GitHub organisation's releases pages.
+NEWSROOM_NAME="Example PlatformOps"
+NEWSROOM_ORG="example-org"
+NEWSROOM_REPOS="core, frontend, installer, portal"
+
+# Private half: repositories Claude cannot read, so merged pull requests are taken from
+# GitHub notification emails in Gmail. Leave both empty to drop this half of the panel.
+NEWSROOM_PRIVATE_NAME="Example Agents"
+NEWSROOM_PRIVATE_ORG="example-org-private"
+
+# --- where the edition is published ------------------------------------------
+# GitHub Pages: the repo that serves the site (usually this one).
+SITE_REPO=""                   # e.g. you/thedailyreconcile ; empty = do not publish
+SITE_BRANCH="main"
+SITE_DIR="site"
+
+# LinkedIn: see tools/linkedin_post.py. Both must be set, or posting is skipped.
+LINKEDIN_PAGE_URN=""           # e.g. urn:li:organization:12345678
+LINKEDIN_TOKEN_FILE=""         # file holding an access token with w_organization_social

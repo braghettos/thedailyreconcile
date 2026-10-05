@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="The Daily Reconcile">
+<g fill="none" stroke="#000000">
+<circle cx="256.00" cy="256.00" r="230.40" stroke-width="19.58"/>
+<circle cx="256.00" cy="256.00" r="198.14" stroke-width="6.45"/>
+<path d="M 377.81 221.07 A 126.72 126.72 0 0 0 156.14 177.98" stroke-width="28.80" stroke-linecap="round"/>
+<polygon points="113.59,232.45 187.92,202.81 124.37,153.16" fill="#000000" stroke="none"/>
+<path d="M 134.19 290.93 A 126.72 126.72 0 0 0 355.86 334.02" stroke-width="28.80" stroke-linecap="round"/>
+<polygon points="398.41,279.55 324.08,309.19 387.63,358.84" fill="#000000" stroke="none"/>
+<circle cx="256.00" cy="256.00" r="25.34" fill="#000000" stroke="none"/>
+</g></svg>

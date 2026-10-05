@@ -91,6 +91,7 @@ SITE_REPO=""; SITE_BRANCH="main"; SITE_DIR="docs"
 if [ -f "$PUB" ] && [ -n "$SITE_REPO" ] && [ -d "$BASE/repo/.git" ]; then
   if out="$(cd "$BASE/repo" && python3 tools/publish_site.py "$ENG/$PUB" "$TODAY" "$ENG/content.json" 2>&1)"; then
     ( cd "$BASE/repo"
+      git pull --rebase -q origin "$SITE_BRANCH" 2>/dev/null || true
       git add -A "$SITE_DIR" >/dev/null 2>&1
       if ! git diff --cached --quiet; then
         git -c user.name="The Daily Reconcile" -c user.email="noreply@localhost" \

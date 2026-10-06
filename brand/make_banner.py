@@ -2,8 +2,10 @@
 
     python3 brand/make_banner.py <issue.pdf> [out.png] [WIDTHxHEIGHT]
 
-A LinkedIn page cover renders at about 1128x191 but is uploaded much larger, so it stays sharp
-on a high-DPI screen. LinkedIn asks for 4200x700 (6:1), which is the default here.
+LinkedIn documents the page cover as 1512x256, minimum and recommended, max 3 MB
+(linkedin.com/help/linkedin/answer/a563312). That is 5.906:1, not the 6:1 quoted by most
+third-party size guides. The default here is 3024x512: the documented ratio exactly, at twice
+the size, so it stays sharp on a high-DPI screen and still lands well under the size limit.
 
 Any horizontal cut through the front page at that ratio runs through a line of type, so the
 masthead block (ears, nameplate, folio, the Inside-today strip) is taken whole and centred on a
@@ -13,7 +15,7 @@ remaining width stays white; that is the design, not padding to be trimmed.
 import os, re, sys
 import pymupdf
 
-TW, TH = 4200, 700                       # LinkedIn's recommended upload; it renders at 1128x191
+TW, TH = 3024, 512                       # 2x LinkedIn's documented 1512x256 cover (5.906:1)
 CROP = pymupdf.Rect(18, 18, 577, 150)    # the masthead block on an A4 front page
 
 

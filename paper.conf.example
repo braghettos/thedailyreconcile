@@ -36,7 +36,7 @@ SITE_URL=""                    # e.g. https://thedailyreconcile.news
 # Buttondown URL. Setting it also means docs/privacy.html describes a form that exists, so set
 # it before publishing that page.
 BUTTONDOWN_USERNAME=""
-# An API key from Buttondown > Settings > Programming, in a file readable only by you:
+# An API key from buttondown.com/keys (nav: API > Keys), in a file readable only by you:
 #   mkdir -p ~/.config && umask 077 && pbpaste > ~/.config/buttondown.token
 BUTTONDOWN_TOKEN_FILE=""       # e.g. ~/.config/buttondown.token
 # "draft" composes the issue and leaves it for you to send, which is the default on purpose:

@@ -79,7 +79,8 @@ sending domain are included at every tier.
 
 1. Create the newsletter, and put its username in `BUTTONDOWN_USERNAME`. That alone adds the
    sign-up form to the edition page.
-2. Create an API key under **Settings → Programming** and save it so only you can read it:
+2. Create an API key at [buttondown.com/keys](https://buttondown.com/keys) (the nav calls it **API →
+   Keys**) and save it so only you can read it:
    ```
    mkdir -p ~/.config && umask 077 && pbpaste > ~/.config/buttondown.token
    ```

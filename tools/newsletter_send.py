@@ -161,7 +161,13 @@ def build_html(c, post, urls, motto):
             f'<code style="font-family:{MONO};font-size:14px;color:{INK};word-break:break-all">'
             f'{html.escape(post["tip_code"])}</code>'
             f"</td></tr></table>")
-    return f"""<!-- buttondown-editor-mode: fancy -->
+    # "naked" is Buttondown's raw-HTML mode. "fancy" is its WYSIWYG editor, which cannot
+    # represent nested tables or inline styles and shows "some content couldn't be converted"
+    # on every issue; the body is still stored and sent byte for byte, but opening it in that
+    # editor and saving would rewrite it. Markdown mode is not an option either: this template
+    # has blank lines between blocks, which a Markdown processor treats as paragraph breaks and
+    # would wrap in <p> tags mid-table.
+    return f"""<!-- buttondown-editor-mode: naked -->
 <div style="display:none;font-size:0;line-height:0;max-height:0;overflow:hidden;opacity:0">{html.escape(lead.get('deck', ''))}</div>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="{PAPER}" style="background:{PAPER};margin:0;padding:0">
 <tr><td align="center" style="padding:0">

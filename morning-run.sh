@@ -116,6 +116,14 @@ if [ -f "$PUB" ] && [ -n "$SITE_REPO" ] && [ -d "$BASE/repo/.git" ]; then
 elif [ -n "$SITE_REPO" ]; then
   log "SITE SKIPPED (no public PDF, or $BASE/repo is not a git clone)"
 fi
+# Newsletter: after the site push, so the links in the email already resolve, and only when the
+# public PDF exists, so it never points at a page that was not published. Opt-in and silent when
+# BUTTONDOWN_TOKEN_FILE is unset, and it composes a draft rather than sending unless
+# NEWSLETTER_STATUS says otherwise.
+if [ -n "${BUTTONDOWN_TOKEN_FILE:-}" ] && [ -f "$PUB" ] && [ -f "$POST" ] && [ -d "$BASE/repo" ]; then
+  log "$(cd "$BASE/repo" && python3 tools/newsletter_send.py \
+         "$ENG/$POST" "$ENG/content.json" "$TODAY" 2>&1 | tail -n 1)"
+fi
 # LinkedIn posting is opt-in and off by default: it needs API access LinkedIn only grants on
 # review. Without a token file the post is simply prepared, archived and emailed, and published
 # by hand. Nothing is logged here when it is not configured.

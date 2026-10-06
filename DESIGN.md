@@ -65,3 +65,33 @@ sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00
   post text, and publishing it yourself keeps a person between an unattended research run and your
   own name. `tools/linkedin_post.py` remains, and works, for anyone who does hold API access; it
   stays dormant unless `LINKEDIN_TOKEN_FILE` is set, so it costs nothing to leave in place.
+
+- **The newsletter composes a draft, it does not send.** `NEWSLETTER_STATUS` defaults to
+  `draft`, for the same reason LinkedIn is published by hand: a stranger's inbox deserves a
+  person in the loop more than a Page does, not less. Set it to `about_to_send` once the shape
+  of the email is boring.
+
+- **Buttondown, because a daily is priced by subscriber and not by send.** Mailchimp allows
+  10-15x the contact count per month and a daily needs 30x, so a daily paper pays overages
+  permanently. Kit and beehiiv have far more generous free tiers - 10,000 and 2,500 subscribers,
+  no send cap - but both gate the send API behind $39-43/month, which an unattended launchd job
+  cannot do without. Buttondown is free to 100 subscribers with the API and a custom sending
+  domain included, and $9/month after that.
+
+- **The PDF is linked, never attached.** Buttondown bills attachments as an add-on, and a link
+  keeps the issue readable from the archive long after a mail client has forgotten it.
+
+- **The email is single-theme and almost image-free.** Mail clients handle dark mode by
+  force-inverting, which would turn the front page into a negative and the red into pink, so the
+  email stays on cream whatever the reader's system says. The nameplate is set as text rather
+  than as the SVG mark, because clients strip SVG and blocked images should not cost the reader
+  the masthead. The front page is the one image, and its alt text carries the headline.
+
+- **The newsletter reuses the LinkedIn post rather than re-deriving the prose.** That text is
+  already written to be public - step 6 of the prompt forbids links, PR numbers and repository
+  names - so it is the safest source. `newsletter_send.py` strips the three LinkedIn-only
+  things: the hashtags, "Swipe through the PDF below", and the "Curated and summarised with
+  Claude" sign-off that the footer says at more length. It also checks the finished body against
+  the private newsroom slug and the owner's name, and refuses to send on a match; the fields it
+  reads from `content.json` are deliberately the ones `public_edition()` leaves untouched, and
+  the newsroom panel is left out entirely.

@@ -47,3 +47,27 @@ h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .6re
 .archive .d{flex:0 0 11em;color:var(--muted);font-size:.9rem}
 footer{border-top:2px solid var(--rule);margin-top:40px;padding:16px 0 40px;color:var(--muted);font-size:.85rem}
 footer a{color:var(--muted)}
+
+/* --- newsletter sign-up (only rendered when BUTTONDOWN_USERNAME is set) ------------------ */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.subscribe{border-top:2px solid var(--rule);margin-top:40px;padding-top:18px}
+.subscribe h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem}
+.sub-why{margin:0 0 1.1rem;max-width:52ch;color:var(--muted)}
+.subscribe form{max-width:34rem}
+.sub-field{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 1.1rem}
+.sub-field input{flex:1 1 13em;min-width:0;font-family:inherit;font-size:1rem;
+  padding:.55rem .7rem;border:1px solid var(--rule);background:var(--paper);color:var(--ink)}
+.sub-field input::placeholder{color:var(--muted)}
+.sub-field button{border:1px solid var(--rule);background:var(--ink);color:var(--paper);
+  font-family:inherit;font-size:1rem;font-weight:700;padding:.55rem 1.2rem;cursor:pointer}
+.sub-field button:hover{background:var(--accent);border-color:var(--accent)}
+.sub-opts{border:0;border-top:1px solid color-mix(in srgb,var(--rule) 25%,transparent);
+  margin:0;padding:1rem 0 0}
+.sub-opts legend{font-size:.76rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;padding:0;margin:0 0 .6rem}
+.opt{display:flex;gap:.6rem;align-items:flex-start;margin:0 0 .7rem;cursor:pointer}
+.opt input{margin:.3em 0 0;flex:0 0 auto;accent-color:var(--accent)}
+.opt span{min-width:0}
+.opt b{font-weight:700}
+.opt i{display:block;font-style:normal;font-size:.88rem;color:var(--muted);margin-top:.1rem}
+.sub-fine{font-size:.82rem;color:var(--muted);margin:1rem 0 0;max-width:46ch}

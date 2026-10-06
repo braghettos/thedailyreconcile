@@ -23,6 +23,28 @@ SITE_REPO=""                   # e.g. you/thedailyreconcile ; empty = do not pub
 SITE_BRANCH="main"
 SITE_DIR="docs"           # GitHub Pages serves / or /docs only
 
+# Only the newsletter needs this: the site's own pages link to each other relatively. Leave it
+# empty and the links are built from SITE_REPO as https://<owner>.github.io/<repo>. Set it once
+# a custom domain resolves, and put the same name in docs/CNAME.
+SITE_URL=""                    # e.g. https://thedailyreconcile.news
+
+# --- newsletter (Buttondown) --------------------------------------------------
+# OFF by default. Without a username no form is rendered on the site, and without a token
+# nothing is ever sent; the morning run says nothing about either.
+#
+# BUTTONDOWN_USERNAME puts the sign-up form on the edition page. It is the name in your
+# Buttondown URL. Setting it also means docs/privacy.html describes a form that exists, so set
+# it before publishing that page.
+BUTTONDOWN_USERNAME=""
+# An API key from Buttondown > Settings > Programming, in a file readable only by you:
+#   mkdir -p ~/.config && umask 077 && pbpaste > ~/.config/buttondown.token
+BUTTONDOWN_TOKEN_FILE=""       # e.g. ~/.config/buttondown.token
+# "draft" composes the issue and leaves it for you to send, which is the default on purpose:
+# it keeps a person between an unattended research run and a stranger's inbox, the same
+# reasoning DESIGN.md gives for LinkedIn. Change to "about_to_send" to send unattended.
+NEWSLETTER_STATUS="draft"
+NEWSLETTER_FORMAT="html"       # or "text" for the plain-text edition
+
 # LinkedIn: OFF by default, and most setups should leave it that way. Posting to a Page needs
 # the Community Management API, which LinkedIn grants only after reviewing an application, plus
 # a token that expires every 60 days. Left empty, the morning run still writes the post, archives

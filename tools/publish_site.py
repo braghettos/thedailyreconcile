@@ -8,6 +8,9 @@ to the caller (morning-run.sh), so a failed render never pushes a half-built sit
 """
 import datetime, html, json, os, shutil, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paperconf import conf                      # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "docs")   # GitHub Pages serves / or /docs only
 MONTHS = ["January", "February", "March", "April", "May", "June",
@@ -55,6 +58,57 @@ def add_edition(pdf, date, content=None):
     idx.sort(key=lambda e: e["date"], reverse=True)
     json.dump(idx, open(os.path.join(SITE, "editions.json"), "w"), indent=1, ensure_ascii=False)
     return idx
+
+
+def subscribe_block():
+    """The sign-up form, or nothing at all when no newsletter is configured.
+
+    Like the LinkedIn step, this is opt-in: without BUTTONDOWN_USERNAME the site stays exactly
+    as it was, with no form and nothing to say on the privacy page. The form posts straight to
+    Buttondown, so the site remains static and no address ever reaches this repository.
+
+    The two checkboxes are Buttondown tags, which it only acts on with its tagging add-on. They
+    cost nothing to collect meanwhile, and no one is worse off without it: every issue carries
+    the PDF link and the print instructions regardless.
+    """
+    user = conf("BUTTONDOWN_USERNAME")
+    if not user:
+        return ""
+    u = html.escape(user)
+    return f"""
+    <section class="subscribe">
+      <h3>Get it in the morning</h3>
+      <p class="sub-why">One email a day, at seven: the front page, the lead story, and what
+      else is in the two pages. That is the whole list &mdash; no digest, no promotions, no
+      &ldquo;we&rsquo;ve updated our newsletter&rdquo;.</p>
+      <form class="embeddable-buttondown-form" method="post"
+            action="https://buttondown.com/api/emails/embed-subscribe/{u}">
+        <input type="hidden" name="embed" value="1">
+        <div class="sub-field">
+          <label class="vh" for="bd-email">Email address</label>
+          <input id="bd-email" type="email" name="email" placeholder="you@example.com"
+                 autocomplete="email" required>
+          <button type="submit">Subscribe</button>
+        </div>
+        <fieldset class="sub-opts">
+          <legend>Do you want to print it?</legend>
+          <label class="opt">
+            <input type="checkbox" name="tag" value="print">
+            <span><b>Put the print-ready PDF at the top.</b>
+            <i>A4, two pages, duplex on the long edge &mdash; the layout this paper was built
+            for.</i></span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" name="tag" value="plaintext">
+            <span><b>Send plain text instead.</b>
+            <i>The text and the links, no images. Good in a terminal mail client.</i></span>
+          </label>
+        </fieldset>
+        <p class="sub-fine">We keep your address and these two answers, and nothing else.
+        Unsubscribe is one click in every email. <a href="privacy.html">What we do with
+        it</a>.</p>
+      </form>
+    </section>"""
 
 
 def render(idx):
@@ -110,11 +164,11 @@ def render(idx):
   <p class="motto">All the cloud native news that&rsquo;s fit to reconcile</p>
   <div class="rules"><span></span><span></span></div>
 </header>
-<main>{latest}{archive}
+<main>{latest}{archive}{subscribe_block()}
 </main>
 <footer>
   <p>Researched, written and laid out by Claude Code. Every item links to its source; always check the original.</p>
-  <p><a href="https://github.com/braghettos/thedailyreconcile">Source on GitHub</a></p>
+  <p><a href="privacy.html">Privacy</a> &middot; <a href="https://github.com/{esc(conf('SITE_REPO') or 'braghettos/thedailyreconcile')}">Source on GitHub</a></p>
 </footer>
 </body>
 </html>

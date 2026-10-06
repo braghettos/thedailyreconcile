@@ -1,15 +1,19 @@
 """Builds the LinkedIn page cover from a rendered issue: the masthead, not a blind slice.
 
-    python3 brand/make_banner.py <issue.pdf> [out.png]
+    python3 brand/make_banner.py <issue.pdf> [out.png] [WIDTHxHEIGHT]
 
-A 1128x191 cover is 5.9:1, and any horizontal cut through the front page at that ratio runs
-through a line of type. So the masthead block (ears, nameplate, folio, the Inside-today strip)
-is taken whole and centred on a white canvas instead.
+A LinkedIn page cover renders at about 1128x191 but is uploaded much larger, so it stays sharp
+on a high-DPI screen. LinkedIn asks for 4200x700 (6:1), which is the default here.
+
+Any horizontal cut through the front page at that ratio runs through a line of type, so the
+masthead block (ears, nameplate, folio, the Inside-today strip) is taken whole and centred on a
+white canvas instead. The crop is narrower than 6:1, so it is scaled to the full height and the
+remaining width stays white; that is the design, not padding to be trimmed.
 """
-import os, sys
+import os, re, sys
 import pymupdf
 
-TW, TH = 2256, 382                       # 2x LinkedIn page cover, downscaled by them
+TW, TH = 4200, 700                       # LinkedIn's recommended upload; it renders at 1128x191
 CROP = pymupdf.Rect(18, 18, 577, 150)    # the masthead block on an A4 front page
 
 
@@ -17,7 +21,12 @@ def main():
     if len(sys.argv) < 2:
         print(__doc__.strip()); sys.exit(2)
     pdf = sys.argv[1]
-    out = sys.argv[2] if len(sys.argv) > 2 else "brand/linkedin-banner-2256x382.png"
+    global TW, TH
+    size = next((a for a in sys.argv[2:] if re.fullmatch(r"\d+x\d+", a)), "")
+    if size:
+        TW, TH = (int(v) for v in size.split("x"))
+    rest = [a for a in sys.argv[2:] if a != size]
+    out = rest[0] if rest else f"brand/linkedin-banner-{TW}x{TH}.png"
     src = pymupdf.open(pdf)[0]
     scale = min(TW / CROP.width, TH / CROP.height)
     w, h = CROP.width * scale, CROP.height * scale

@@ -168,6 +168,7 @@ def render(idx):
 </main>
 <footer>
   <p>Researched, written and laid out by Claude Code. Every item links to its source; always check the original.</p>
+  <p>Made by <a href="{esc(conf('OWNER_URL') or 'https://www.linkedin.com/in/diegobraga86/')}">{esc(conf('OWNER') or 'Diego Braga')}</a>, who decides what it covers.</p>
   <p><a href="privacy.html">Privacy</a> &middot; <a href="https://github.com/{esc(conf('SITE_REPO') or 'braghettos/thedailyreconcile')}">Source on GitHub</a></p>
 </footer>
 </body>

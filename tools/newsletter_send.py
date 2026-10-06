@@ -217,6 +217,7 @@ def build_html(c, post, urls, motto):
 
   <div style="margin:28px 0 0">{rule(2, INK)}</div>
   <p style="margin:14px 0 10px;font-family:{SERIF};font-style:italic;font-size:13px;line-height:1.6;color:{MUTED}">Researched, written and laid out by Claude Code. Every item links to its source; always check the original.</p>
+    <p style="margin:0 0 10px;font-family:{SANS};font-size:11px;line-height:1.65;color:{MUTED}">Made by <a href="{html.escape(urls['owner'])}" style="color:{MUTED}">{html.escape(urls['owner_name'])}</a>, who decides what it covers.</p>
   <p style="margin:0 0 10px;font-family:{SANS};font-size:11px;line-height:1.65;color:{MUTED}">Sources today: {html.escape(c.get('sources_line',''))}</p>
   <p style="margin:0;font-family:{SANS};font-size:11px;line-height:1.65;color:{MUTED}">
     You get this because you asked for it, and for nothing else. We keep your address and your paper preference, and no other data.<br>
@@ -240,7 +241,9 @@ def build_text(c, post, urls):
         out += [f"{post['tip']}: {post['tip_code']}", ""]
     out += ["Want it on paper? The PDF is A4, two pages, double-sided, flip on the long edge.",
             "", "Researched, written and laid out by Claude Code. Every item links to its",
-            "source; always check the original.", f"Privacy: {urls['privacy']}"]
+            "source; always check the original.",
+            f"Made by {urls['owner_name']}, who decides what it covers: {urls['owner']}",
+            f"Privacy: {urls['privacy']}"]
     return "\n".join(out)
 
 
@@ -280,6 +283,8 @@ def main():
         "thumb": f"{base}/editions/{day}/page-1.png",
         "privacy": f"{base}/privacy.html",
         "source": f"https://github.com/{conf('SITE_REPO')}",
+        "owner": conf("OWNER_URL", "https://www.linkedin.com/in/diegobraga86/"),
+        "owner_name": conf("OWNER", "Diego Braga"),
     }
 
     fmt = (conf("NEWSLETTER_FORMAT", "html") or "html").lower()
@@ -288,7 +293,21 @@ def main():
 
     # Only fields public_edition() leaves untouched are used above, and the krateo panel is
     # left out entirely. This is the belt to that braces.
-    hit = guard(body, [conf("NEWSROOM_PRIVATE_ORG"), conf("OWNER_FIRSTNAME"), "personal edition"])
+    #
+    # The guard reads the editorial source, not the rendered body: the footer deliberately
+    # credits the owner by name, and scanning the finished email would trip on that every
+    # morning. What must never leak is the owner's name arriving through the content - the post
+    # text or content.json - which is what these inputs are. Only the fields the email actually
+    # renders are listed: "edition" is the personal label ("... personal edition") and is never
+    # used here, so including it would fail every morning for a string no subscriber can see.
+    lead_ = c.get("lead") or {}
+    editorial = "\n".join([
+        open(post_path).read(),
+        lead_.get("kicker", ""), lead_.get("headline", ""), lead_.get("deck", ""),
+        c.get("sources_line", ""), c.get("motto", ""),
+        json.dumps(c.get("factbox") or {}, ensure_ascii=False),
+    ])
+    hit = guard(editorial, [conf("NEWSROOM_PRIVATE_ORG"), conf("OWNER_FIRSTNAME"), "personal edition"])
     if hit:
         print(f"NEWSLETTER FAILED: body contains {', '.join(hit)} - nothing sent")
         sys.exit(1)

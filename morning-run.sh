@@ -89,16 +89,29 @@ POST="linkedin-post-$TODAY.txt"
 SITE_REPO=""; SITE_BRANCH="main"; SITE_DIR="docs"
 [ -f "$BASE/paper.conf" ] && . "$BASE/paper.conf"
 if [ -f "$PUB" ] && [ -n "$SITE_REPO" ] && [ -d "$BASE/repo/.git" ]; then
-  if out="$(cd "$BASE/repo" && python3 tools/publish_site.py "$ENG/$PUB" "$TODAY" "$ENG/content.json" 2>&1)"; then
-    ( cd "$BASE/repo"
-      git pull --rebase -q origin "$SITE_BRANCH" 2>/dev/null || true
-      git add -A "$SITE_DIR" >/dev/null 2>&1
-      if ! git diff --cached --quiet; then
-        git -c user.name="The Daily Reconcile" -c user.email="noreply@localhost" \
-            commit -q -m "Edition of $TODAY" && git push -q origin "$SITE_BRANCH"
-      fi ) && log "SITE PUBLISHED | $out" || log "SITE FAILED push"
+  # The clone must be level with the remote BEFORE the site is rebuilt. Once publish_site.py has
+  # written into docs/ the tree is dirty, and "git pull --rebase" refuses to run on a dirty tree:
+  # the edition would then be committed on a stale base and the push rejected as non-fast-forward.
+  # --autostash also recovers a tree left dirty by an earlier failed run. A pull that fails is
+  # only a warning, never fatal: the edition is still committed locally, and the next run rebases
+  # it onto the remote and pushes both. Every failure says what went wrong; a silenced pull is
+  # what let a rejected push go unnoticed for a day.
+  if ! pulled="$(git -C "$BASE/repo" pull --rebase --autostash -q origin "$SITE_BRANCH" 2>&1)"; then
+    log "SITE WARNING pull failed, committing on the local base | ${pulled:-no message}"
+  fi
+  if ! built="$(cd "$BASE/repo" && python3 tools/publish_site.py "$ENG/$PUB" "$TODAY" "$ENG/content.json" 2>&1)"; then
+    log "SITE FAILED build | $built"
   else
-    log "SITE FAILED $out"
+    git -C "$BASE/repo" add -A "$SITE_DIR" >/dev/null 2>&1
+    if git -C "$BASE/repo" diff --cached --quiet; then
+      log "SITE unchanged | $built"
+    elif pushed="$(git -C "$BASE/repo" -c user.name="The Daily Reconcile" \
+                       -c user.email="noreply@localhost" commit -q -m "Edition of $TODAY" 2>&1 &&
+                   git -C "$BASE/repo" push -q origin "$SITE_BRANCH" 2>&1)"; then
+      log "SITE PUBLISHED | $built"
+    else
+      log "SITE FAILED push, the edition is committed in $BASE/repo | ${pushed:-no message}"
+    fi
   fi
 elif [ -n "$SITE_REPO" ]; then
   log "SITE SKIPPED (no public PDF, or $BASE/repo is not a git clone)"

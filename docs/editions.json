@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-06",
+  "pdf": "editions/2026-10-06/daily-reconcile-2026-10-06.pdf",
+  "thumb": "editions/2026-10-06/page-1.png",
+  "pages": 2,
+  "headline": "Local SSD swap triples agent sandbox density: 80 pods a node become 240",
+  "deck": "Node swap has been GA since Kubernetes v1.34 and now has numbers behind it. The win is real, but it has a floor: squeeze too hard and run times jump 40%.",
+  "inside": [
+   "OpenStack 2026.2 Hibiscus arrives with Intel TDX, AMD SEV-SNP and Lustre in Manila",
+   "vLLM 0.31.0 rejects per-request multimodal kwargs and drops the slow tokenizer",
+   "Kubelet only watches inodes at 5% free, and by then it is evicting pods",
+   "OpenAI ships text watermarking to the API, off by default, detector withheld"
+  ]
+ },
+ {
   "date": "2026-10-05",
   "pdf": "editions/2026-10-05/daily-reconcile-2026-10-05.pdf",
   "thumb": "editions/2026-10-05/page-1.png",

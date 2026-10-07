@@ -18,6 +18,11 @@ stranger's inbox:
 
 The PDF is linked, never attached: Buttondown bills attachments as an add-on, and a link keeps
 the issue readable from the archive long after the mail client has forgotten it.
+
+Every request carries X-Buttondown-Live-Dangerously. Buttondown rejects status "about_to_send"
+without it, once per API key, so that no integration can mail a list by accident on its first
+run. Rotating the key arms that speed bump again, which is why the header is always sent rather
+than waved through by hand.
 """
 import html
 import json
@@ -325,7 +330,11 @@ def main():
 
     req = urllib.request.Request(
         API, data=json.dumps(payload).encode(),
-        headers={"Authorization": f"Token {token}", "Content-Type": "application/json"},
+        headers={"Authorization": f"Token {token}", "Content-Type": "application/json",
+                 # Buttondown refuses status "about_to_send" without this, once per API key:
+                 # a deliberate speed bump so no integration mails a list by accident. The run
+                 # is the deliberate part, so it is set every time rather than by hand once.
+                 "X-Buttondown-Live-Dangerously": "true"},
         method="POST")
     try:
         with urllib.request.urlopen(req) as resp:

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-07",
+  "pdf": "editions/2026-10-07/daily-reconcile-2026-10-07.pdf",
+  "thumb": "editions/2026-10-07/page-1.png",
+  "pages": 2,
+  "headline": "Harbor patches 12 flaws at once: anonymous users could read private manifests",
+  "deck": "Four high-severity advisories landed on October 6. The worst lets any account with push rights to one project delete tags in every other.",
+  "inside": [
+   "cgroup v1 now has a removal date: v1.38, and v1.35 already refuses to start",
+   "Mistral Large 4: 1.05T parameters, 49B active, weights still to come",
+   "OpenTelemetry's Kubernetes attributes processor hits v1.0.0 and renames your labels",
+   "Cloudflare will sunset Wrangler for an agent-first CLI covering 3,000 API operations"
+  ]
+ },
+ {
   "date": "2026-10-06",
   "pdf": "editions/2026-10-06/daily-reconcile-2026-10-06.pdf",
   "thumb": "editions/2026-10-06/page-1.png",

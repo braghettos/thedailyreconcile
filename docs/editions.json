@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-08",
+  "pdf": "editions/2026-10-08/daily-reconcile-2026-10-08.pdf",
+  "thumb": "editions/2026-10-08/page-1.png",
+  "pages": 2,
+  "headline": "Claude Haiku 5.5 cuts the list price tenfold, but the discount stops at 100,000 tokens",
+  "deck": "Out October 7 with a 1M-token context and 128K output. A new tokenizer and a long-prompt tier eat into the headline saving.",
+  "inside": [
+   "Cloudflare set frontier models loose on its own WAF: 1,107 payloads, 49 findings",
+   "OpenSSH 10.6 breaks compression and some usernames on purpose",
+   "Vendor survey: 16.9 hours a week debugging against 9.8 writing code",
+   "Meshery reaches CNCF incubation and v1.0 on the back of 7,065 contributors"
+  ]
+ },
+ {
   "date": "2026-10-07",
   "pdf": "editions/2026-10-07/daily-reconcile-2026-10-07.pdf",
   "thumb": "editions/2026-10-07/page-1.png",

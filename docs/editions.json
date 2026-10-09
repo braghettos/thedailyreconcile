@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-09",
+  "pdf": "editions/2026-10-09/daily-reconcile-2026-10-09.pdf",
+  "thumb": "editions/2026-10-09/page-1.png",
+  "pages": 2,
+  "headline": "Cloudflare open-sources a decision model: Apache 2.0 weights, 27B and 9B",
+  "deck": "Announced October 1, dissected by InfoQ on October 8. Clef answers typed questions with probabilities instead of text, and the weights are on Hugging Face.",
+  "inside": [
+   "A shared peer-to-peer cache cut a 268 MB model pull from 11 seconds to 3",
+   "Reflection's Beam: 501B parameters trained in under four weeks",
+   "Give agents propose-only rights, not root",
+   "Harbor 2.15.4 puts back the two defaults 2.15.3 broke three days earlier"
+  ]
+ },
+ {
   "date": "2026-10-08",
   "pdf": "editions/2026-10-08/daily-reconcile-2026-10-08.pdf",
   "thumb": "editions/2026-10-08/page-1.png",

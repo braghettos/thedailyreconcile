@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-10",
+  "pdf": "editions/2026-10-10/daily-reconcile-2026-10-10.pdf",
+  "thumb": "editions/2026-10-10/page-1.png",
+  "pages": 2,
+  "headline": "Agents rewrote 800,000 lines of Copilot into Rust: startup 5.25s to 292ms",
+  "deck": "Reported October 9: 14.5 weeks, 128 pull requests, 135 releases shipped while the work ran — and commenters who think a compiler proves less than GitHub implies.",
+  "inside": [
+   "NIS2 and DORA need an artifact with an owner, not another policy document",
+   "Cloudflare puts a partitioned log on object storage and pays for it in latency",
+   "Camel Karavan applied whatever your kubernetes.yaml asked for",
+   "CircleCI's runner autoscaler hits 1.0, and you cannot upgrade in place"
+  ]
+ },
+ {
   "date": "2026-10-09",
   "pdf": "editions/2026-10-09/daily-reconcile-2026-10-09.pdf",
   "thumb": "editions/2026-10-09/page-1.png",

@@ -17,6 +17,11 @@ NEWSROOM_REPOS="core, frontend, installer, portal"
 NEWSROOM_PRIVATE_NAME="Example Agents"
 NEWSROOM_PRIVATE_ORG="example-org-private"
 
+# --- printing -----------------------------------------------------------------
+# "no" stops the paper reaching the printer. It is still written, published and emailed; the
+# PDF stays in archive/YYYY-MM-DD/. Leave it unset or "yes" to print as usual.
+PRINT="yes"
+
 # --- where the edition is published ------------------------------------------
 # GitHub Pages: the repo that serves the site (usually this one).
 SITE_REPO=""                   # e.g. you/thedailyreconcile ; empty = do not publish

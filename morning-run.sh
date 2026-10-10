@@ -131,20 +131,28 @@ if [ -n "${LINKEDIN_TOKEN_FILE:-}" ] && [ -f "$PUB" ] && [ -f "$POST" ] && [ -d 
   log "$(cd "$BASE/repo" && python3 tools/linkedin_post.py "$ENG/$POST" "$ENG/$PUB" 2>&1 | tail -n 1)"
 fi
 
-# Hand over to the print watcher (same disk, so the move is atomic)
-cp "$PDF" "$BASE/.incoming.pdf" && mv "$BASE/.incoming.pdf" "$BASE/inbox/$PDF"
-log "QUEUED $PDF ${summary:+| $summary}"
-
-result="still in inbox after 3 minutes"
-for _ in $(seq 1 36); do
-  sleep 5
-  if [ -e "$BASE/printed/$PDF" ]; then result="PRINTED"; break; fi
-  if [ -e "$BASE/failed/$PDF" ];  then result="FAILED (see print.log)"; break; fi
-done
-log "PRINT $result"
+# Hand over to the print watcher (same disk, so the move is atomic). PRINT="no" in paper.conf
+# skips it: the paper is still written, published and emailed, it simply never reaches paper.
+# Queueing with no watcher running would park the PDF in inbox/ and then report "not printed"
+# every morning for something that was switched off on purpose.
 lead="$(python3 -c "import json; print(json.load(open('content.json'))['lead']['headline'])" 2>/dev/null)"
-if [ "$result" = "PRINTED" ]; then
-  notify "Printed: $lead"
+if [ "${PRINT:-yes}" = "no" ]; then
+  log "PRINT SKIPPED (PRINT=no) ${summary:+| $summary}"
+  notify "Published: $lead"
 else
-  notify "Not printed: $result. The PDF is in DailyReconcile/archive/$TODAY"
+  cp "$PDF" "$BASE/.incoming.pdf" && mv "$BASE/.incoming.pdf" "$BASE/inbox/$PDF"
+  log "QUEUED $PDF ${summary:+| $summary}"
+
+  result="still in inbox after 3 minutes"
+  for _ in $(seq 1 36); do
+    sleep 5
+    if [ -e "$BASE/printed/$PDF" ]; then result="PRINTED"; break; fi
+    if [ -e "$BASE/failed/$PDF" ];  then result="FAILED (see print.log)"; break; fi
+  done
+  log "PRINT $result"
+  if [ "$result" = "PRINTED" ]; then
+    notify "Printed: $lead"
+  else
+    notify "Not printed: $result. The PDF is in DailyReconcile/archive/$TODAY"
+  fi
 fi

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-12",
+  "pdf": "editions/2026-10-12/daily-reconcile-2026-10-12.pdf",
+  "thumb": "editions/2026-10-12/page-1.png",
+  "pages": 2,
+  "headline": "Claude flagged 29,000 possible flaws in open source. 516 have been fixed.",
+  "deck": "Anthropic opened its OSS Scanner to more projects on October 8. Reports reach maintainers with no human review, and the queue is now the bottleneck.",
+  "inside": [
+   "Let the model edit its own context: 11.4% more accuracy, 21.5% fewer FLOPs",
+   "Cloudflare turns its whole request path into spans, and bills from December",
+   "Terraform's Google provider 8.0 moves your load balancers",
+   "Unauthenticated SQL injection at 9.8 in JetBrains' database layer"
+  ]
+ },
+ {
   "date": "2026-10-10",
   "pdf": "editions/2026-10-10/daily-reconcile-2026-10-10.pdf",
   "thumb": "editions/2026-10-10/page-1.png",

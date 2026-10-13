@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-13",
+  "pdf": "editions/2026-10-13/daily-reconcile-2026-10-13.pdf",
+  "thumb": "editions/2026-10-13/page-1.png",
+  "pages": 2,
+  "headline": "AI doubled Spotify's merged changes to 17,000 a month",
+  "deck": "Reported October 12. Fleet Management has merged 2.5 million automated pull requests, and a background agent runs Claude in Kubernetes pods. Two incidents showed where the controls had not kept up.",
+  "inside": [
+   "vLLM lets decode hand the KV cache back: 2,334 ms down to 702 ms at 20k tokens",
+   "A regex compiler in GitLab CI gives unauthenticated code execution, CVSS 10.0",
+   "A fake AWS Terraform provider drops a Rust backdoor",
+   "kagent makes agents YAML; the guardrail is RBAC"
+  ]
+ },
+ {
   "date": "2026-10-12",
   "pdf": "editions/2026-10-12/daily-reconcile-2026-10-12.pdf",
   "thumb": "editions/2026-10-12/page-1.png",

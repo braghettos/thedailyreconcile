@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-14",
+  "pdf": "editions/2026-10-14/daily-reconcile-2026-10-14.pdf",
+  "thumb": "editions/2026-10-14/page-1.png",
+  "pages": 2,
+  "headline": "AIStore's ETL API took Kubernetes host settings from anyone: CVSS 10.0",
+  "deck": "NVIDIA shipped six bulletins on October 13 covering 18 flaws. Eight are in AIStore, and none of them need credentials.",
+  "inside": [
+   "Backstage 1.55 resumes crashed scaffolder tasks and drops deprecated catalog APIs",
+   "Docker Hub handed live tokens to whoever you named as organisation owner",
+   "Agents took a Tomcat server in under 24 hours through one endpoint with no login",
+   "A Komodo logs grant is enough to run commands as root on the host"
+  ]
+ },
+ {
   "date": "2026-10-13",
   "pdf": "editions/2026-10-13/daily-reconcile-2026-10-13.pdf",
   "thumb": "editions/2026-10-13/page-1.png",

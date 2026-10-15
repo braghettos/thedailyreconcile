@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-15",
+  "pdf": "editions/2026-10-15/daily-reconcile-2026-10-15.pdf",
+  "thumb": "editions/2026-10-15/page-1.png",
+  "pages": 2,
+  "headline": "Three 9.2 flaws in NGINX reach the ingress controller and Gateway Fabric",
+  "deck": "F5 published three advisories on October 14. All three are memory corruption, none needs a login, and the fix list runs to ten releases.",
+  "inside": [
+   "Before blaming the scheduler, ask whether Kueue admitted the workload at all",
+   "Volcano 1.16.0 gives tenants queue hierarchies inside their own namespaces",
+   "A built-in Collabora server is dropping webshells on Nextcloud hosts",
+   "Working exploit code for the GitLab 10.0, and a count: 25,766 hosts"
+  ]
+ },
+ {
   "date": "2026-10-14",
   "pdf": "editions/2026-10-14/daily-reconcile-2026-10-14.pdf",
   "thumb": "editions/2026-10-14/page-1.png",

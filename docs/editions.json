@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-16",
+  "pdf": "editions/2026-10-16/daily-reconcile-2026-10-16.pdf",
+  "thumb": "editions/2026-10-16/page-1.png",
+  "pages": 2,
+  "headline": "GhostAction hit 30,000 repositories in one afternoon",
+  "deck": "GitGuardian counted the October 8 burst on October 13: about 1,900 compromised accounts and 3,174 secrets on the shopping list.",
+  "inside": [
+   "Meta opens 816B weights, and keeps a revenue clause on the API resellers",
+   "Capitalise the HTTP/2 method and Istio's AuthorizationPolicy stops matching",
+   "A spoofed annotation let a Pod walk past its ClusterQueue, and the fix is off by default",
+   "Tempo 3.1 redacts traces from a query, and the rewrite cannot be undone"
+  ]
+ },
+ {
   "date": "2026-10-15",
   "pdf": "editions/2026-10-15/daily-reconcile-2026-10-15.pdf",
   "thumb": "editions/2026-10-15/page-1.png",

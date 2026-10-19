@@ -8,6 +8,10 @@ posts: the composer always opens as the member and resets to them every time, so
 the page is three clicks - the identity dropdown, The Daily Reconcile, then Publish. That was
 measured against the live composer, not assumed.
 
+The front page is revealed in Finder alongside the tab. LinkedIn will not take an image from a
+URL, so the picture has to be dragged in; a post carrying the masthead travels further than a
+wall of text, and one drag is cheaper than hunting for the file.
+
 Two edits are made to the text on the way:
 
   - "Swipe through the PDF below" is dropped. It is written for a document carousel, and this
@@ -31,6 +35,18 @@ from newsletter_send import guard                         # noqa: E402
 
 COMPOSER = "https://www.linkedin.com/feed/?shareActive=true&text="
 DROP = r"\s*Swipe through the PDF below\.?"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def reveal_front_page(day):
+    """Selects the day's front page in Finder, ready to drag into the composer."""
+    png = os.path.join(ROOT, "docs", "editions", day, "page-1.png")
+    if not os.path.exists(png):
+        return ""
+    if subprocess.call(["open", "-R", png],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
+        return ""
+    return ", front page ready to drag"
 
 
 def main():
@@ -62,7 +78,8 @@ def main():
     # as a page admin, and the default browser may not be that one.
     for cmd in (["open", "-a", "Google Chrome", url], ["open", url]):
         if subprocess.call(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0:
-            print(f"POST TAB OPENED ({len(text)} chars, publish as the page: 3 clicks)")
+            extra = reveal_front_page(day)
+            print(f"POST TAB OPENED ({len(text)} chars, publish as the page: 3 clicks{extra})")
             return
     print("POST FAILED: could not open a browser tab")
     sys.exit(1)

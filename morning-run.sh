@@ -124,6 +124,13 @@ if [ -n "${BUTTONDOWN_TOKEN_FILE:-}" ] && [ -f "$PUB" ] && [ -f "$POST" ] && [ -
   log "$(cd "$BASE/repo" && python3 tools/newsletter_send.py \
          "$ENG/$POST" "$ENG/content.json" "$TODAY" 2>&1 | tail -n 1)"
 fi
+# A Chrome tab with the day's post already written, waiting to be published. Opt-in via
+# LINKEDIN_COMPOSE="yes". LinkedIn's composer always opens as the member and resets to them
+# every time, so publishing as the page is three clicks rather than one; the tab saves the
+# writing and the pasting, not the choosing.
+if [ "${LINKEDIN_COMPOSE:-no}" = "yes" ] && [ -f "$POST" ] && [ -d "$BASE/repo" ]; then
+  log "$(cd "$BASE/repo" && python3 tools/open_post.py "$ENG/$POST" "$TODAY" 2>&1 | tail -n 1)"
+fi
 # LinkedIn posting is opt-in and off by default: it needs API access LinkedIn only grants on
 # review. Without a token file the post is simply prepared, archived and emailed, and published
 # by hand. Nothing is logged here when it is not configured.

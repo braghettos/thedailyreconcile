@@ -50,6 +50,11 @@ BUTTONDOWN_TOKEN_FILE=""       # e.g. ~/.config/buttondown.token
 NEWSLETTER_STATUS="draft"
 NEWSLETTER_FORMAT="html"       # or "text" for the plain-text edition
 
+# "yes" opens a Chrome tab each morning with the day's post already written, so publishing is
+# a few clicks instead of a copy and paste. The composer always opens as the member, so posting
+# as a page means switching identity first: dropdown, the page, then Publish.
+LINKEDIN_COMPOSE="no"
+
 # LinkedIn: OFF by default, and most setups should leave it that way. Posting to a Page needs
 # the Community Management API, which LinkedIn grants only after reviewing an application, plus
 # a token that expires every 60 days. Left empty, the morning run still writes the post, archives

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-19",
+  "pdf": "editions/2026-10-19/daily-reconcile-2026-10-19.pdf",
+  "thumb": "editions/2026-10-19/page-1.png",
+  "pages": 2,
+  "headline": "A guest can write into the host kernel through a deferred checksum, at 9.3",
+  "deck": "CVE-2026-99999, called PwnEscape, went public on October 19. Every kernel from 2.6.27 is affected and there is no workaround.",
+  "inside": [
+   "vLLM 0.32.0 halves KV memory on SM100, and closes CORS by default",
+   "Six more kernel flaws the same morning, five of them with a working root PoC",
+   "AWS unplugs its European Sovereign Cloud from the global backbone on Saturday",
+   "Apache Kylin ships 12 fixes, and Airflow's SSH provider never checked host keys"
+  ]
+ },
+ {
   "date": "2026-10-16",
   "pdf": "editions/2026-10-16/daily-reconcile-2026-10-16.pdf",
   "thumb": "editions/2026-10-16/page-1.png",

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-20",
+  "pdf": "editions/2026-10-20/daily-reconcile-2026-10-20.pdf",
+  "thumb": "editions/2026-10-20/page-1.png",
+  "pages": 2,
+  "headline": "Honeypots caught the Redis RESTORE flaw in use, and only 8.6.3 closes it",
+  "deck": "CVE-2026-25243 was disclosed in May. Defused's decoys logged scripted attacks on October 16 and 17, and CISA has not listed it.",
+  "inside": [
+   "EmbeddingGemma 2 drops text, code, images, video and audio into one 768-dimension space",
+   "The autoscaler never joined the DRA conversation, and that is where GPUs sit idle",
+   "A Traefik TLS-option cache hit skipped the cross-namespace check, and the databases disagree on how bad",
+   "Buildkite scopes a secret to one pipeline, one branch and one queue"
+  ]
+ },
+ {
   "date": "2026-10-19",
   "pdf": "editions/2026-10-19/daily-reconcile-2026-10-19.pdf",
   "thumb": "editions/2026-10-19/page-1.png",

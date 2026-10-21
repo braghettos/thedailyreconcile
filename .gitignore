@@ -16,6 +16,7 @@ engine/daily-reconcile-*.pdf
 engine/linkedin-post-*.txt
 engine/page-*.png
 engine/content.prev.json
+engine/post-url-*.txt
 engine/test-render.pdf
 history.json
 archive/
@@ -24,3 +25,7 @@ printed/
 failed/
 linkedin/
 *.log
+
+# Finder writes these whenever a folder is opened, and the morning run opens docs/editions/
+# to reveal the front page. Tracked, they turned up as a conflict in the publish pull.
+.DS_Store

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-21",
+  "pdf": "editions/2026-10-21/daily-reconcile-2026-10-21.pdf",
+  "thumb": "editions/2026-10-21/page-1.png",
+  "pages": 2,
+  "headline": "A Kustomize ref runs commands in Argo CD's repo-server, at 9.9",
+  "deck": "CVE IDs landed October 20 for advisories first published October 7. Fixed in 3.3.15, 3.4.10 and 3.5.4; v2 from 2.7.0 gets no patch.",
+  "inside": [
+   "llm-d 1.0 makes multi-tenant inference the default problem, with a v1 config API",
+   "Guessable keys get three emSign roots distrusted",
+   "OVHcloud CLI releases swapped for a secret stealer",
+   "Backstage 1.56 needs a maintenance window"
+  ]
+ },
+ {
   "date": "2026-10-20",
   "pdf": "editions/2026-10-20/daily-reconcile-2026-10-20.pdf",
   "thumb": "editions/2026-10-20/page-1.png",

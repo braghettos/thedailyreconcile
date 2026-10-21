@@ -89,9 +89,12 @@ sudo pmset repeat wakeorpoweron MTWRFSU 06:45:00
 
 - **The newsletter reuses the LinkedIn post rather than re-deriving the prose.** That text is
   already written to be public - step 6 of the prompt forbids links, PR numbers and repository
-  names - so it is the safest source. `newsletter_send.py` strips the three LinkedIn-only
-  things: the hashtags, "Swipe through the PDF below", and the "Curated and summarised with
-  Claude" sign-off that the footer says at more length. It also checks the finished body against
+  names - so it is the safest source. `newsletter_send.py` strips the LinkedIn-only
+  things: the hashtags and "Swipe through the PDF below". It also strips a "Curated and
+  summarised with Claude" sign-off, and `open_post.py` does the same before the composer: the
+  prompt stopped asking for that line - the owner did not want it on LinkedIn, and the paper
+  already says who wrote it on page two and on the site - but a line the model might still
+  write on an off day is cheaper to drop twice than to notice once it is published. It also checks the finished body against
   the private newsroom slug and the owner's name, and refuses to send on a match; the fields it
   reads from `content.json` are deliberately the ones `public_edition()` leaves untouched, and
   the newsroom panel is left out entirely.

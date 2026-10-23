@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-23",
+  "pdf": "editions/2026-10-23/daily-reconcile-2026-10-23.pdf",
+  "thumb": "editions/2026-10-23/page-1.png",
+  "pages": 2,
+  "headline": "LiteLLM 1.107.0 shipped a credential stealer to PyPI and four image tags",
+  "deck": "Built from a lookalike repository one hyphen off the real one, it was live for about 101 minutes on October 21. Pin 1.106.2.",
+  "inside": [
+   "Open Responses and Agent Skills join the Agentic AI Foundation",
+   "Railway says decrypted variables were taken",
+   "Kueue 0.20.3 stops early quota release",
+   "ZDI made ksmbd flaws public"
+  ]
+ },
+ {
   "date": "2026-10-21",
   "pdf": "editions/2026-10-21/daily-reconcile-2026-10-21.pdf",
   "thumb": "editions/2026-10-21/page-1.png",

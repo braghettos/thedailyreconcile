@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-24",
+  "pdf": "editions/2026-10-24/daily-reconcile-2026-10-24.pdf",
+  "thumb": "editions/2026-10-24/page-1.png",
+  "pages": 2,
+  "headline": "A third PHP flaw lands after PHP2Shell, and the October 21 patches miss it",
+  "deck": "CVE-2026-115560 needs a rare setup: turn off session upload progress. Images below PHP 8.4.27 or 8.3.36 still need a rebuild.",
+  "inside": [
+   "Three pods share one simulated A100 across Kamaji tenants, and a fourth is refused",
+   "An LLMjacking agent turns exposed model endpoints into scanners and miners",
+   "Kyverno 1.19.2 closes 24 advisories, nine critical",
+   "Two Ironic flaws reach maintenance mode and the BMC"
+  ]
+ },
+ {
   "date": "2026-10-23",
   "pdf": "editions/2026-10-23/daily-reconcile-2026-10-23.pdf",
   "thumb": "editions/2026-10-23/page-1.png",

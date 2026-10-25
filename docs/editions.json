@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-25",
+  "pdf": "editions/2026-10-25/daily-reconcile-2026-10-25.pdf",
+  "thumb": "editions/2026-10-25/page-1.png",
+  "pages": 2,
+  "headline": "Kimi K3.1 Pro cuts Moonshot's API price by a third, with weights promised by November 4",
+  "deck": "2.8 trillion parameters, 104 billion active, a 1-million-token context. No licence named yet; the benchmarks are Moonshot's own.",
+  "inside": [
+   "Read-only cluster context took a coding agent from 191 to 64 seconds per fault",
+   "Cloudflare reclaims 100 TB of RAM by trimming its hash rings",
+   "Google's Data Agent Kit is GA, and its data-loss guardrail is only advice",
+   "Cinder showed readers other projects' messages"
+  ]
+ },
+ {
   "date": "2026-10-24",
   "pdf": "editions/2026-10-24/daily-reconcile-2026-10-24.pdf",
   "thumb": "editions/2026-10-24/page-1.png",

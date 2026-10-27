@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-27",
+  "pdf": "editions/2026-10-27/daily-reconcile-2026-10-27.pdf",
+  "thumb": "editions/2026-10-27/page-1.png",
+  "pages": 2,
+  "headline": "A foreign ServiceAccount can escalate in Consul through consul-k8s",
+  "deck": "HashiCorp published five Consul bulletins on October 26. Move consul-k8s to 2.1.0 or 1.8.18, and Consul to 2.1.0 or Enterprise 1.21.19.",
+  "inside": [
+   "MCP now spends a third of its 116 conformance scenarios on security",
+   "Flux 2.10 drops a default token permission and needs Kubernetes 1.35",
+   "Stolen GitHub tokens planted 13,500 branches to print secrets into logs",
+   "OpenTofu 1.13 resolves more values at plan time"
+  ]
+ },
+ {
   "date": "2026-10-25",
   "pdf": "editions/2026-10-25/daily-reconcile-2026-10-25.pdf",
   "thumb": "editions/2026-10-25/page-1.png",

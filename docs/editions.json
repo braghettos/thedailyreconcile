@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-28",
+  "pdf": "editions/2026-10-28/daily-reconcile-2026-10-28.pdf",
+  "thumb": "editions/2026-10-28/page-1.png",
+  "pages": 2,
+  "headline": "Google publishes a container escape for an nf_tables flaw fixed in February",
+  "deck": "CVE-2026-23111, rated 7.8, needs only CAP_NET_ADMIN, which unprivileged user namespaces hand to ordinary users on many nodes. Fixed kernels: 5.15.200, 6.1.163, 6.6.124, 6.12.70, 6.18.10.",
+  "inside": [
+   "AWS lets an agent triage kernel CVEs in 3.4 seconds each, and keeps humans on review",
+   "NeMo Agent Toolkit 1.9.0 closes a login-free takeover rated 10.0",
+   "Kubernetes starts a working group on workload conformance",
+   "Uber sizes stateful workloads in compute units, not cores"
+  ]
+ },
+ {
   "date": "2026-10-27",
   "pdf": "editions/2026-10-27/daily-reconcile-2026-10-27.pdf",
   "thumb": "editions/2026-10-27/page-1.png",

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-29",
+  "pdf": "editions/2026-10-29/daily-reconcile-2026-10-29.pdf",
+  "thumb": "editions/2026-10-29/page-1.png",
+  "pages": 2,
+  "headline": "An unset JWKS URL lets anyone forge a Kafka superuser token",
+  "deck": "Apache Kafka disclosed 12 CVEs on October 28, fixed in 4.2.2, 4.3.2 and 4.4.0. The JWT bypass needs a setting, not an upgrade.",
+  "inside": [
+   "Nemotron 3.5 Transcribe leads open speech models with 4B active parameters",
+   "Kubernetes 1.37.2 arrives late, and DRA taints now evict",
+   "LiteLLM Enterprise proxies leak their master key, at 10.0",
+   "MLflow's file-read flaw was probed within a day"
+  ]
+ },
+ {
   "date": "2026-10-28",
   "pdf": "editions/2026-10-28/daily-reconcile-2026-10-28.pdf",
   "thumb": "editions/2026-10-28/page-1.png",

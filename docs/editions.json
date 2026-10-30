@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-30",
+  "pdf": "editions/2026-10-30/daily-reconcile-2026-10-30.pdf",
+  "thumb": "editions/2026-10-30/page-1.png",
+  "pages": 2,
+  "headline": "Gemini 4 Carbon leads the index at 59, for cyber defenders only",
+  "deck": "Google announced its new frontier model on October 28 at $2 and $10 per million tokens, with no context window, technical report or public API date.",
+  "inside": [
+   "Mistral Large 4's open weights arrive: 1T parameters, 49B active, 1M context",
+   "Datadog's Scout model resolves 80 of 90 SREGym faults, in Datadog's own runs",
+   "An extra X-Service-Token header slips past keystonemiddleware access rules",
+   "Kueue 0.20.4 fixes DRA device counts"
+  ]
+ },
+ {
   "date": "2026-10-29",
   "pdf": "editions/2026-10-29/daily-reconcile-2026-10-29.pdf",
   "thumb": "editions/2026-10-29/page-1.png",

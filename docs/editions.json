@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-31",
+  "pdf": "editions/2026-10-31/daily-reconcile-2026-10-31.pdf",
+  "thumb": "editions/2026-10-31/page-1.png",
+  "pages": 2,
+  "headline": "A trojanized Claude Code build planted SSH keys via Cursor's marketplace",
+  "deck": "Versions 2.1.312 and 2.1.313 were live for about 11 hours on October 29; Cursor says at most 5,000 users and that Anthropic did not build them.",
+  "inside": [
+   "Netflix lifts training job success above 99.5% by failing GPU nodes closed",
+   "Azure Deployment Environments retires February 22 with no successor",
+   "Netflix Titus gives sensitive tasks an EC2 instance each",
+   "The zip crate's 10.0 flaw needs a flag, not just an upgrade"
+  ]
+ },
+ {
   "date": "2026-10-30",
   "pdf": "editions/2026-10-30/daily-reconcile-2026-10-30.pdf",
   "thumb": "editions/2026-10-30/page-1.png",

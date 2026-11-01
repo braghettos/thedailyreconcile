@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-01",
+  "pdf": "editions/2026-11-01/daily-reconcile-2026-11-01.pdf",
+  "thumb": "editions/2026-11-01/page-1.png",
+  "pages": 2,
+  "headline": "JetBrains IDEs kept trusting the stolen eMudhra keys, and a 9.0 fix is out",
+  "deck": "The jetbrainsd daemon kept its own certificate list. Toolbox App 3.9.1 and IntelliJ IDEA 2026.2.4 close CVE-2026-118697; 2025.1 and older get no patch.",
+  "inside": [
+   "Cloudflare's GLM-5.3 served 155 replies built on other customers' KV cache",
+   "Google's PageBreak agent has found 500+ XSS bugs since January",
+   "LocalStack's Azure emulator ignores security settings",
+   "OpenStack's Indri cycle weighs a Rust Keystone"
+  ]
+ },
+ {
   "date": "2026-10-31",
   "pdf": "editions/2026-10-31/daily-reconcile-2026-10-31.pdf",
   "thumb": "editions/2026-10-31/page-1.png",

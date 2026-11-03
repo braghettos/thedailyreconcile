@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-03",
+  "pdf": "editions/2026-11-03/daily-reconcile-2026-11-03.pdf",
+  "thumb": "editions/2026-11-03/page-1.png",
+  "pages": 2,
+  "headline": "Rancher's meta proxy handed users' own credentials to cloud provider APIs",
+  "deck": "CVE-2026-88811 needs only a signed-in user opening a provisioning form. SUSE fixed it and two related flaws on October 29 in 2.15.3, 2.14.7, 2.13.11, 2.12.15 and 2.11.19.",
+  "inside": [
+   "vLLM 0.33 drops CUDA 12.9 and more than doubles a DeepSeek benchmark",
+   "Uber puts 800+ MCP servers and 5,000 tools behind one gateway",
+   "Shopify finds open GKE Ingresses from inventory, not repos",
+   "TorchTPU runs PyTorch on TPUs by swapping cuda for tpu"
+  ]
+ },
+ {
   "date": "2026-11-01",
   "pdf": "editions/2026-11-01/daily-reconcile-2026-11-01.pdf",
   "thumb": "editions/2026-11-01/page-1.png",

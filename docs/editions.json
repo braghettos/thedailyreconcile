@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-04",
+  "pdf": "editions/2026-11-04/daily-reconcile-2026-11-04.pdf",
+  "thumb": "editions/2026-11-04/page-1.png",
+  "pages": 2,
+  "headline": "Booby-trapped models on Hugging Face mine crypto on self-hosted GPU servers",
+  "deck": "Pluto Research found 31 malicious repositories on Hugging Face and ModelScope, aimed at Xinference and GPUStack hosts. The code runs on import; no malicious weights are needed.",
+  "inside": [
+   "OpenKruise Agents 0.6 doubles its CRDs to 12 to police agent sandboxes",
+   "Standalone Fleet needs 0.16.3 to close a 9.4 path to cluster-admin",
+   "OpenVox and Puppet servers face a 9.4 RCE with a public proof of concept",
+   "LinkedIn traces app taps end to end"
+  ]
+ },
+ {
   "date": "2026-11-03",
   "pdf": "editions/2026-11-03/daily-reconcile-2026-11-03.pdf",
   "thumb": "editions/2026-11-03/page-1.png",

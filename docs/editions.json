@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-06",
+  "pdf": "editions/2026-11-06/daily-reconcile-2026-11-06.pdf",
+  "thumb": "editions/2026-11-06/page-1.png",
+  "pages": 2,
+  "headline": "Kubernetes won't fix this ingress-nginx CVE: maintenance is over",
+  "deck": "CVE-2026-116472, filed November 5, rates 2.7, but one annotation can drop all traffic through the controller. SUSE's fork is fixed; upstream will not be.",
+  "inside": [
+   "OpenAI names its kernel model GPT-6 Cyber: rated Critical, at $20 in and $100 out",
+   "Nexus Repository 3.98 closes seven flaws, led by a 9.1 SSO bypass",
+   "OpenSSH 10.6p2 stops a password bypass on Alpine hosts",
+   "Kueue 0.20.5 moves per-job logs to verbosity 3"
+  ]
+ },
+ {
   "date": "2026-11-05",
   "pdf": "editions/2026-11-05/daily-reconcile-2026-11-05.pdf",
   "thumb": "editions/2026-11-05/page-1.png",

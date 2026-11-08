@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-08",
+  "pdf": "editions/2026-11-08/daily-reconcile-2026-11-08.pdf",
+  "thumb": "editions/2026-11-08/page-1.png",
+  "pages": 2,
+  "headline": "Google gives gVisor and Agent Substrate to the CNCF Sandbox",
+  "deck": "Announced November 5 with OpenRL. Substrate 1.0 claims agent resume in under 500 ms at 10x container density; the figures are Google's own.",
+  "inside": [
+   "pg_vectorsearch builds a 100M-vector index in 1h40, against 42 hours for HNSW",
+   "Istio 1.31.4 and 1.30.8 fix nine flaws, led by an 8.2 ambient mTLS bypass",
+   "GitHub will block a risky Actions trigger by default from December 2",
+   "OpenBao 2.7 adds post-quantum TLS and drops file storage"
+  ]
+ },
+ {
   "date": "2026-11-06",
   "pdf": "editions/2026-11-06/daily-reconcile-2026-11-06.pdf",
   "thumb": "editions/2026-11-06/page-1.png",

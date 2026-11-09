@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-09",
+  "pdf": "editions/2026-11-09/daily-reconcile-2026-11-09.pdf",
+  "thumb": "editions/2026-11-09/page-1.png",
+  "pages": 2,
+  "headline": "Claude Code's saved permissions leaked 2,539 secrets into 1,994 public repos",
+  "deck": "Answering “don't ask again” writes the whole command, password included, to a config file that often gets committed. The count is Apiiro's; Apiiro sells security tools.",
+  "inside": [
+   "A public exploit hits Hugging Face datasets 5.1.0, and no fixed release exists yet",
+   "Lima 2.3 runs VMs on Windows without QEMU",
+   "IBM fixes 208 flaws in API Connect, three rated 9.9",
+   "Penpot 2.18.0 closes a 9.9 file takeover"
+  ]
+ },
+ {
   "date": "2026-11-08",
   "pdf": "editions/2026-11-08/daily-reconcile-2026-11-08.pdf",
   "thumb": "editions/2026-11-08/page-1.png",

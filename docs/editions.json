@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-10",
+  "pdf": "editions/2026-11-10/daily-reconcile-2026-11-10.pdf",
+  "thumb": "editions/2026-11-10/page-1.png",
+  "pages": 2,
+  "headline": "Claude Fable 5.2 drops to $8 in and $40 out, with a 1M-token context",
+  "deck": "Released November 9 on Anthropic's API, AWS, Google Cloud and Microsoft Foundry; Mythos 5.2, the same model with fewer safeguards, stays limited to vetted organisations. Scores are Anthropic's own.",
+  "inside": [
+   "VMs still run 53% of production apps, says a CNCF and Broadcom survey",
+   "Airflow 3.4.0 fixes 18 flaws, including code execution on Celery workers",
+   "Hyperlight restores a micro-VM snapshot in 3 ms",
+   "Kubeflow Pipelines 2.16.1 leaves a shared-pipeline flaw open on the upload path"
+  ]
+ },
+ {
   "date": "2026-11-09",
   "pdf": "editions/2026-11-09/daily-reconcile-2026-11-09.pdf",
   "thumb": "editions/2026-11-09/page-1.png",

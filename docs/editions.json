@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-11",
+  "pdf": "editions/2026-11-11/daily-reconcile-2026-11-11.pdf",
+  "thumb": "editions/2026-11-11/page-1.png",
+  "pages": 2,
+  "headline": "KubeVirt graduates from the CNCF after ten years",
+  "deck": "Announced November 10 at KubeCon in Salt Lake City, alongside NATS. Broadcom's VM API, another way to run VMs through Kubernetes APIs, entered the Sandbox a day earlier.",
+  "inside": [
+   "KubeRay is donated to the CNCF, and its Helm charts move with v1.8.0",
+   "Istio 1.32 lets AuthorizationPolicy target an HTTPRoute",
+   "Git 2.56.1 fixes six flaws, one in recursive clone",
+   "CloudNativePG and OCM reach Incubating"
+  ]
+ },
+ {
   "date": "2026-11-10",
   "pdf": "editions/2026-11-10/daily-reconcile-2026-11-10.pdf",
   "thumb": "editions/2026-11-10/page-1.png",

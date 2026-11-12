@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-12",
+  "pdf": "editions/2026-11-12/daily-reconcile-2026-11-12.pdf",
+  "thumb": "editions/2026-11-12/page-1.png",
+  "pages": 2,
+  "headline": "Meta moves AI cluster deploys from four hours to minutes with Argo CD and Kargo",
+  "deck": "Meta's entry won the CNCF end-user case study contest at KubeCon. Its team took app delivery out of Terraform on about 100 Kubernetes clusters for AI.",
+  "inside": [
+   "Stale TODOs send Google's coding agents off task, at 77% more tokens",
+   "Railway's build breakout exposed up to 100,000 environments",
+   "GitHub Agentic Workflows are GA, capped at $10 a run by default",
+   "Go 1.27.4 and 1.26.11 fix 12 CVEs, most at build time"
+  ]
+ },
+ {
   "date": "2026-11-11",
   "pdf": "editions/2026-11-11/daily-reconcile-2026-11-11.pdf",
   "thumb": "editions/2026-11-11/page-1.png",

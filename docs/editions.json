@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-13",
+  "pdf": "editions/2026-11-13/daily-reconcile-2026-11-13.pdf",
+  "thumb": "editions/2026-11-13/page-1.png",
+  "pages": 2,
+  "headline": "LinkedIn drops Argo CD for app deploys, and failures fall from 925 to 63",
+  "deck": "Across more than 250 clusters and 100,000 deployments a week, one pod per deployment replaced a shared controller. Argo CD stays for add-ons.",
+  "inside": [
+   "Google's TPU Sync cuts a 235B model's KV-cache transfer from seconds to 230 ms",
+   "runc, crun and CRIU fix a restore flaw that mounts host paths",
+   "Backstage 1.56.5 closes a TechDocs code-execution hole",
+   "OpenTelemetry deprecates the Collector's batch processor"
+  ]
+ },
+ {
   "date": "2026-11-12",
   "pdf": "editions/2026-11-12/daily-reconcile-2026-11-12.pdf",
   "thumb": "editions/2026-11-12/page-1.png",

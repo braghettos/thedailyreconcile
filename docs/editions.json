@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-14",
+  "pdf": "editions/2026-11-14/daily-reconcile-2026-11-14.pdf",
+  "thumb": "editions/2026-11-14/page-1.png",
+  "pages": 2,
+  "headline": "Kyverno 1.20 deletes its legacy engine: old ClusterPolicies stop enforcing",
+  "deck": "The November 12 release removes kyverno.io policy execution from every controller. A default-on Helm gate checks for leftover legacy policies first.",
+  "inside": [
+   "Netflix turns its operational data into a knowledge graph for root-cause agents",
+   "Dormant Qubole roles let an intruder into customer AWS accounts",
+   "Native gang scheduling is beta in 1.37, but Kueue stays the production path",
+   "Google open-sources AQuA to trace agent failures to deployed code"
+  ]
+ },
+ {
   "date": "2026-11-13",
   "pdf": "editions/2026-11-13/daily-reconcile-2026-11-13.pdf",
   "thumb": "editions/2026-11-13/page-1.png",

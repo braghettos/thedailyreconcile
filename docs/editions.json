@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-16",
+  "pdf": "editions/2026-11-16/daily-reconcile-2026-11-16.pdf",
+  "thumb": "editions/2026-11-16/page-1.png",
+  "pages": 2,
+  "headline": "NoisyTCP: an 11-year-old race lets crafted TCP traffic panic Linux nodes",
+  "deck": "CVE-2026-99288 is fixed in kernels 6.12.117, 6.18.63 and 7.3.4. It needs no login, and a crash inside one container takes down the whole host.",
+  "inside": [
+   "Anthropic's risk-based reviews cut Claude Code reverts by over 40%",
+   "A tampered Claude Code extension reached up to 5,000 Cursor users in 11 hours",
+   "Cosmonic packs 1.42 million Wasm agent sandboxes onto one 64-core server",
+   "Kubernetes' Python client plans asyncio and informers"
+  ]
+ },
+ {
   "date": "2026-11-14",
   "pdf": "editions/2026-11-14/daily-reconcile-2026-11-14.pdf",
   "thumb": "editions/2026-11-14/page-1.png",

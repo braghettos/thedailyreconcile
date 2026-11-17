@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-17",
+  "pdf": "editions/2026-11-17/daily-reconcile-2026-11-17.pdf",
+  "thumb": "editions/2026-11-17/page-1.png",
+  "pages": 2,
+  "headline": "Kubernetes will remove kube-proxy's IPVS mode in 1.40",
+  "deck": "Deprecated since 1.35, the ipvs backend should give way to nftables, GA since 1.33. SIG Network says every ipvs user should be planning the move.",
+  "inside": [
+   "vLLM 0.34 sizes the KV cache from free memory and drops Model Runner V1",
+   "AWS Nitro Sandboxes give each EKS pod its own microVM, at no extra charge",
+   "GitLab 19.5.6 fixes 37 flaws, one exposing other namespaces' Kubernetes Secrets",
+   "Kubeshark's MCP server let one injected argument take over a cluster"
+  ]
+ },
+ {
   "date": "2026-11-16",
   "pdf": "editions/2026-11-16/daily-reconcile-2026-11-16.pdf",
   "thumb": "editions/2026-11-16/page-1.png",

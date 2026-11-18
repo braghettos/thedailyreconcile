@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-18",
+  "pdf": "editions/2026-11-18/daily-reconcile-2026-11-18.pdf",
+  "thumb": "editions/2026-11-18/page-1.png",
+  "pages": 2,
+  "headline": "Java4Shell: an OpenJDK Base64 bug enables pre-auth RCE",
+  "deck": "CVE-2026-114938 hits OpenJDK 17.0.6 and later on x86-64 hosts with AVX-512 VBMI. Keycloak, Jenkins and Jira are among the exposed apps.",
+  "inside": [
+   "GPT-6.2 Astra cuts its price 20% to $8 in and $40 out, to mixed reviews",
+   "Backstage 1.57 makes its new frontend system 1.0",
+   "Miners hid on Ray GPU hosts behind a fake nvidia-smi",
+   "Apache's mod_http2 flaw is now exploited"
+  ]
+ },
+ {
   "date": "2026-11-17",
   "pdf": "editions/2026-11-17/daily-reconcile-2026-11-17.pdf",
   "thumb": "editions/2026-11-17/page-1.png",

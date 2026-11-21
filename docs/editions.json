@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-21",
+  "pdf": "editions/2026-11-21/daily-reconcile-2026-11-21.pdf",
+  "thumb": "editions/2026-11-21/page-1.png",
+  "pages": 2,
+  "headline": "Google's Gemini 4 Neon: $3 in, $15 out, close to Opus 5.5 on coding",
+  "deck": "The new top Gemini tier takes 1M tokens of context and ranks third on Artificial Analysis's index. Most other scores come from Google.",
+  "inside": [
+   "Argo CD self-heal can skip a migration hook while apps show Synced",
+   "Poisoned CLAUDE.md files turn AI coding tools into stealers",
+   "Kueue 0.21 candidates list actions before upgrading",
+   "GitLab 19.6.1 patches Ruby2Shell in bundled Ruby"
+  ]
+ },
+ {
   "date": "2026-11-18",
   "pdf": "editions/2026-11-18/daily-reconcile-2026-11-18.pdf",
   "thumb": "editions/2026-11-18/page-1.png",

@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-22",
+  "pdf": "editions/2026-11-22/daily-reconcile-2026-11-22.pdf",
+  "thumb": "editions/2026-11-22/page-1.png",
+  "pages": 2,
+  "headline": "Inkling 2 Mini: an open 26B looped model with 1M context, under Apache 2.0",
+  "deck": "Thinking Machines' first small open model loops its middle layers three times and fits in about 20GB. Most scores are the vendor's, and sources disagree on its size.",
+  "inside": [
+   "Yelp moves 1,000 TiB of Cassandra to EKS without copying it",
+   "A kernel TCP bug behind GKE API timeouts blocked 800 developers",
+   "Slinky slurm-operator 1.3.0 adds controller HA, with breaking changes",
+   "Backstage 1.56.6 stops its Kubernetes proxy forwarding user credentials"
+  ]
+ },
+ {
   "date": "2026-11-21",
   "pdf": "editions/2026-11-21/daily-reconcile-2026-11-21.pdf",
   "thumb": "editions/2026-11-21/page-1.png",

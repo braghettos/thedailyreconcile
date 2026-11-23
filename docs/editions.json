@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-23",
+  "pdf": "editions/2026-11-23/daily-reconcile-2026-11-23.pdf",
+  "thumb": "editions/2026-11-23/page-1.png",
+  "pages": 2,
+  "headline": "NGINX2Root hits Ingress controllers, and retired ingress-nginx gets no fix",
+  "deck": "NGINX 1.30.7 and 1.31.9 fix five memory-safety bugs disclosed on November 18. F5's own controllers are updated; the community controller, retired in March, is not.",
+  "inside": [
+   "AWS Lambda now runs GPU inference, with up to 48 calls sharing one model copy",
+   "Two million canary prompts caught three hacked inference providers",
+   "Claude Code's \"don't ask again\" rules put 31,088 secrets on public GitHub",
+   "Karpenter 1.15.3 ignores empty EC2NodeClass selectors"
+  ]
+ },
+ {
   "date": "2026-11-22",
   "pdf": "editions/2026-11-22/daily-reconcile-2026-11-22.pdf",
   "thumb": "editions/2026-11-22/page-1.png",

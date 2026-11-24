@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-24",
+  "pdf": "editions/2026-11-24/daily-reconcile-2026-11-24.pdf",
+  "thumb": "editions/2026-11-24/page-1.png",
+  "pages": 2,
+  "headline": "Kubernetes 1.38 kubelets will reject the cgroupDriver setting",
+  "deck": "The sneak peek for the December 16 release lists two breaking node changes and three features expected to go stable. Plans may change.",
+  "inside": [
+   "vLLM test: NVMe matches a DRAM pool for agent caches within 1%",
+   "Together AI: a coding agent leaked the key to stored prompts",
+   "GLM-5.4 runs 28 layers twice, with no price or weights yet",
+   "Shirudo shields exploits before the patch"
+  ]
+ },
+ {
   "date": "2026-11-23",
   "pdf": "editions/2026-11-23/daily-reconcile-2026-11-23.pdf",
   "thumb": "editions/2026-11-23/page-1.png",

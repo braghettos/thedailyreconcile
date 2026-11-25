@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-25",
+  "pdf": "editions/2026-11-25/daily-reconcile-2026-11-25.pdf",
+  "thumb": "editions/2026-11-25/page-1.png",
+  "pages": 2,
+  "headline": "Argo CD 3.6.3, 3.5.9 and 3.4.15 fix seven flaws, one a one-request crash",
+  "deck": "Four High and three Moderate advisories landed on November 24. One unauthenticated gRPC call stops argocd-server, and the v2 lines get no patch.",
+  "inside": [
+   "llm-d adds SGLang, and a host-RAM cache cuts first-token wait 8.7x",
+   "Crossplane 2.5.0 is final, and v1.20 reaches end of life",
+   "Velero 1.19 adds changed-block backups and drops Restic",
+   "Baidu posts ERNIE 5.5 Flash Preview weights under Apache 2.0"
+  ]
+ },
+ {
   "date": "2026-11-24",
   "pdf": "editions/2026-11-24/daily-reconcile-2026-11-24.pdf",
   "thumb": "editions/2026-11-24/page-1.png",

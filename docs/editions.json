@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-26",
+  "pdf": "editions/2026-11-26/daily-reconcile-2026-11-26.pdf",
+  "thumb": "editions/2026-11-26/page-1.png",
+  "pages": 2,
+  "headline": "Kubernetes 1.37.3, 1.36.7 and 1.35.11: check kubelet ID ranges before upgrading",
+  "deck": "The November 25 patches fix a scheduler crash and user-namespace ID ranges, but a kubelet whose subordinate range reaches 2^32-1 will now refuse to start.",
+  "inside": [
+   "OpenAI's Pando Git backend moves nearly a petabyte a day and cuts push latency 80%",
+   "Jenkins fixes 21 plugin flaws, including two sandbox bypasses",
+   "KubeSphere flaw signs cluster-CA certificates for any subject",
+   "Volcano 1.16.1 fixes a DRF panic and keeps DRA pods in gangs"
+  ]
+ },
+ {
   "date": "2026-11-25",
   "pdf": "editions/2026-11-25/daily-reconcile-2026-11-25.pdf",
   "thumb": "editions/2026-11-25/page-1.png",

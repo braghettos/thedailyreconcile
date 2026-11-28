@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-28",
+  "pdf": "editions/2026-11-28/daily-reconcile-2026-11-28.pdf",
+  "thumb": "editions/2026-11-28/page-1.png",
+  "pages": 2,
+  "headline": "Backstage 1.57.4, 1.56.7 and 1.54.13 harden URL readers; location updates need delete rights",
+  "deck": "The November 27 patches tighten how integrations parse SCM URLs and keep scaffolder actions out of .git. Check permission policies before upgrading.",
+  "inside": [
+   "vLLM nightly lifts Inkling 2 Mini 40% to 190 tokens a second on one GPU",
+   "KServe 0.22's first candidate adds SGLang and drops trustRemoteCode",
+   "Exploited vCenter bypass CVE-2026-123890 now has a public exploit",
+   "Kueue 0.20.8 moves per-object logs to verbosity 3"
+  ]
+ },
+ {
   "date": "2026-11-26",
   "pdf": "editions/2026-11-26/daily-reconcile-2026-11-26.pdf",
   "thumb": "editions/2026-11-26/page-1.png",
